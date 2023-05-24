@@ -52,8 +52,6 @@ public abstract class Account {
     public String get_id() {
         return id;
     }
-    public void get_id2() {}
-    public void get_id3() {}
 }
 
 
