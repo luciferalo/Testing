@@ -1,10 +1,13 @@
 package com.example.testingproject;
 
-public abstract class Account {
+public class Account {
     private static int id_counter = 0;
     private String id;
     private double balance;
     private Client owner;
+
+    String username;
+    String password;
 
     public Account(Client owner, double initial_balance) {
         this.owner = owner;
@@ -43,7 +46,6 @@ public abstract class Account {
         return balance;
     }
 
-    public abstract String get_type();
 
     public Client get_owner() {
         return owner;
