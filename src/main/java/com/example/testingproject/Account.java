@@ -53,7 +53,7 @@ public abstract class Account {
         return id;
     }
     public void get_id2() {}
-
+    public void get_id3() {}
 }
 
 
