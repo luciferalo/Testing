@@ -35,28 +35,27 @@ public class HomeController {
     @FXML
     private Button withdrawbtn;
 
-@FXML
-void depositbtnclicked(ActionEvent event){
-    try {
-        FXMLLoader loader;
-        loader = new FXMLLoader(getClass().getResource("Deposit.fxml"));
-        root = loader.load();
+    @FXML
+    void depositbtnclicked(ActionEvent event) {
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("Deposit.fxml"));
+            root = loader.load();
 
-        DepositController depositController = loader.getController();
+            DepositController depositController = loader.getController();
 
-        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    catch (Exception e) {
-        e.printStackTrace();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
 
     @FXML
-    void withdrawbtnclicked(ActionEvent event){
+    void withdrawbtnclicked(ActionEvent event) {
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("Withdraw.fxml"));
@@ -64,19 +63,17 @@ void depositbtnclicked(ActionEvent event){
 
             WithdrawController withdrawController = loader.getController();
 
-            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
-    void transferbtnclicked(ActionEvent event){
+    void transferbtnclicked(ActionEvent event) {
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("Transfer.fxml"));
@@ -84,19 +81,18 @@ void depositbtnclicked(ActionEvent event){
 
             TransferController transferController = loader.getController();
 
-            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
     @FXML
-    void Applyforloadbtnclicked(ActionEvent event){
+    void Applyforloadbtnclicked(ActionEvent event) {
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("ApplyForLoan.fxml"));
@@ -104,18 +100,17 @@ void depositbtnclicked(ActionEvent event){
 
             ApplyforloanController applyforloanController = loader.getController();
 
-            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    void Paybillsbtnclicked(ActionEvent event){
+    void Paybillsbtnclicked(ActionEvent event) {
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("Paybills.fxml"));
@@ -123,18 +118,17 @@ void depositbtnclicked(ActionEvent event){
 
             PaybillsController paybillscontroller = loader.getController();
 
-            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    void showaccountbtnclicked(ActionEvent event){
+    void showaccountbtnclicked(ActionEvent event) {
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("ShowAccount.fxml"));
@@ -142,12 +136,11 @@ void depositbtnclicked(ActionEvent event){
 
             ShowAccountController showaccountcontroller = loader.getController();
 
-            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
