@@ -54,4 +54,24 @@ void depositbtnclicked(ActionEvent event){
         }
 
     }
+
+    @FXML
+    void withdrawbtnclicked(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("Withdraw.fxml"));
+            root = loader.load();
+
+            WithdrawController withdrawController = loader.getController();
+
+            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }
