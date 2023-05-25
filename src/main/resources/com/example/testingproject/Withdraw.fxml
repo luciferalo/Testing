@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.WithdrawController">
    <children>
       <Label layoutX="349.0" layoutY="14.0" text="Withdraw Page">
@@ -13,15 +14,15 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="152.0" layoutY="120.0" text="Please enter the amount you need to withdraw from your account">
+      <Label layoutX="87.0" layoutY="121.0" text="Please enter the amount you need to withdraw from your account">
          <font>
-            <Font size="20.0" />
+            <Font size="25.0" />
          </font>
       </Label>
       <TextField fx:id="withdrawtxt" alignment="CENTER" layoutX="187.0" layoutY="179.0" prefHeight="46.0" prefWidth="526.0" promptText="0000,00" />
-      <Label fx:id="approvedlabel" layoutX="84.0" layoutY="360.0" text="Label">
+      <Label fx:id="approvedlabel" layoutX="84.0" layoutY="360.0">
          <font>
-            <Font size="20.0" />
+            <Font size="30.0" />
          </font>
       </Label>
       <Button fx:id="withdrawbtn" layoutX="393.0" layoutY="264.0" mnemonicParsing="false" onAction="#withdrawbtnclicked" text="Withdraw">
@@ -29,9 +30,9 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Label fx:id="failedlabel" layoutX="84.0" layoutY="421.0" text="Label">
+      <Label fx:id="failedlabel" layoutX="64.0" layoutY="425.0">
          <font>
-            <Font size="20.0" />
+            <Font size="25.0" />
          </font>
       </Label>
    </children>
