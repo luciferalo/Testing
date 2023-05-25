@@ -1,19 +1,18 @@
 package com.example.testingproject;
 
 public class Account {
-    private static int id_counter = 0;
+    private  int id_counter = 0;
     private String id;
     private double balance;
-    private Client owner;
 
-    String username;
-    String password;
-
-    public Account(Client owner, double initial_balance) {
-        this.owner = owner;
+boolean is_there(Account a){
+    return a.id_counter != 0;
+}
+    public Account( double initial_balance,int counter) {
+        this.id_counter=counter;
         this.balance = initial_balance;
         this.id = "A" + id_counter;
-        id_counter++;
+
     }
 
     public void deposit(double amount) {
@@ -39,7 +38,7 @@ public class Account {
     }
 
     public void  showbalance() {
-        System.out.println("The account has"+ balance);
+        System.out.println("The account has "+ balance);
     }
 
     public double get_balance() {
@@ -47,9 +46,7 @@ public class Account {
     }
 
 
-    public Client get_owner() {
-        return owner;
-    }
+
 
     public String get_id() {
         return id;

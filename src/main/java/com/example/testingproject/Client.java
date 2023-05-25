@@ -7,48 +7,93 @@ public class Client {
     String nationalID;
     String mobile;
 
+    String username;
+    String password;
+     String gender;
 
-     Gender gender;
-    public enum Gender {
-        Male,
-        Female
+    private double total_balance=0;
+    private double virtual_balance=total_balance;
+
+    private double Total_loan=0;
+
+
+
+
+    Client(Client c){
+
     }
-
     private ArrayList<Account> accounts;
 
     private ArrayList<Loan> loans;
-    private Bank bank;
+    int Num_Acc=0;
+    int num_loan=0;
+//----------------------------------------------------------------------------------------------------------------
 
-    Client(){
-
-
-    }
-
-
-    public Client(String name, String nationalID, Gender gender, String mobile) {
+    public Client(String name, String nationalID, String gender, String mobile,double initial_balance,String pass,String user_name) {
+        this.password=pass;
+        this.username=user_name;
         accounts = new ArrayList<>();
+        loans=new ArrayList<>();
         this.name = name;
         this.nationalID = nationalID;
         this.gender = gender;
         this.mobile = mobile;
+        this.open_account(initial_balance);
+    }
+//----------------------------------------------------------------------------------------------------
+    public Account getAccounts(int accno) {
+        return this.accounts.get(accno-1);
+    }
+    public Loan getLoans(int num_loan) {
+        return this.loans.get(num_loan-1);
     }
 
-    public Account open_account(double initial_balance) {
-        Account account=new Account(this,initial_balance);
-        bank.add_account(account);
-        accounts.add(account);
-        return account;
+
+//------------------------------------------------------------------------------------------
+
+    public double getTotal_loan() {
+        this.Total_loan=0;
+        for (int i = 1; i <=this.num_loan; i++) {
+            this.Total_loan=this.getLoans(i).get_amount()+this.Total_loan;
+        }
+        return this.Total_loan;
     }
 
-    public void close_account(Account account) {
-        accounts.remove(account);
-        bank.remove_account(account);
+    public double getTotal_balance() {
+        this.total_balance=0;
+        for (int i = 1; i <=this.Num_Acc; i++) {
+            total_balance=this.getAccounts(i).get_balance()+total_balance;
+        }
+
+        return total_balance;
     }
 
- /*   public Loan apply_for_loan(double amount, int duration, double interest_rate) {
-        return bank.open_loan(this, amount, duration, interest_rate);
+    public double getVirtual_balance() {
+        if(this.num_loan==0){
+            this.virtual_balance=this.getTotal_balance();
+        }
+        else{
+        this.virtual_balance=this.getTotal_balance()-this.getTotal_loan();
+            System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
+
     }
-*/
+        return this.virtual_balance;
+    }
+
+    public boolean apply_for_loan(double amount,String Deadline){
+        if(this.getVirtual_balance()<amount){
+            return false;
+        }
+        else{
+
+            Loan l=new Loan(amount,Deadline,++this.num_loan);
+            loans.add(l);
+            this.virtual_balance=this.virtual_balance-amount;
+            return true;
+        }
+
+    }
+//-----------------------------------------------------------------------------------------------------------
     public void make_deposit(Account account, double amount) {
         account.deposit(amount);
         new Deposit(account, amount);
@@ -68,4 +113,19 @@ public class Client {
         account.withdraw(amount);
         new PayBills(biller, account, amount);
     }
+
+    public void open_account(double initial_balance) {             // add new account
+        Account account=new Account(initial_balance,++this.Num_Acc);
+        accounts.add(account);
+    }
+
+
+
+    public void close_account(Account account) {
+        accounts.remove(account);
+        this.Num_Acc--;
+        //bank.remove_account(account);
+    }
+
+    //--------------------------------------------------------------------------------------------------------
 }
