@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.HelloController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="613.0" layoutX="-11.0">
          <image>
-            <Image url="@../../../../../../../../2312019.jpg" />
+            <Image url="@login_background.jpg" />
          </image>
       </ImageView>
       <AnchorPane layoutX="14.0" layoutY="64.0" opacity="0.56" prefHeight="272.0" prefWidth="274.0" style="-fx-background-color: #000000;">
@@ -25,7 +25,7 @@
             </Label>
             <PasswordField fx:id="passwordtxt" layoutX="68.0" layoutY="165.0" promptText="Enter your Password" style="-fx-background-color: #212121;" />
             <TextField fx:id="Usertxt" layoutX="69.0" layoutY="111.0" promptText="Enter your username" style="-fx-background-color: #212121;" />
-            <Button fx:id="loginbtn" layoutX="111.0" layoutY="218.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Login" />
+            <Button fx:id="loginbtn" layoutX="111.0" layoutY="218.0" mnemonicParsing="false" onAction="#setLoginbtn" style="-fx-background-color: #ffffff;" text="Login" />
          </children>
       </AnchorPane>
    </children>
