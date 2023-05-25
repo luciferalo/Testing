@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.ChoosingAccountController">
+   <children>
+      <Label layoutX="181.0" layoutY="32.0" text="Please select which account you want to use">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Button fx:id="Acount1btn" layoutX="181.0" layoutY="275.0" mnemonicParsing="false" onAction="#account1clicked" text="Account1" />
+      <Button fx:id="Account2btn" layoutX="423.0" layoutY="275.0" mnemonicParsing="false" onAction="#account2clicked" text="Account2" />
+      <Button fx:id="Account3btn" layoutX="645.0" layoutY="275.0" mnemonicParsing="false" onAction="#account3clicked" text="Account3" />
+   </children>
+</AnchorPane>

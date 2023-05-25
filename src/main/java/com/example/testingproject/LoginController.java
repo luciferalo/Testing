@@ -12,11 +12,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloController {
+public class LoginController {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    private Stage loginstage;
+    private Scene loginscene;
+    private Parent loginroot;
 
     @FXML
     private TextField Usertxt;
@@ -30,22 +30,20 @@ public class HelloController {
     @FXML
     void setLoginbtn(ActionEvent event) throws IOException {
     try {
-        String username = Usertxt.getText();
-
         FXMLLoader loader;
-        loader = new FXMLLoader(getClass().getResource("Home.fxml"));
-        root = loader.load();
+        loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
+        loginroot = loader.load();
 
-        HomeController homeController = loader.getController();
-        homeController.displayname(username);
+        ChoosingAccountController choosingAccountController = loader.getController();
 
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    } catch (Exception e){
-        e.printStackTrace();
+        loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        loginscene = new Scene(loginroot);
+        loginstage.setScene(loginscene);
+        loginstage.show();
     }
+    catch (Exception e){
+        e.printStackTrace();
+        }
     }
 
 }
