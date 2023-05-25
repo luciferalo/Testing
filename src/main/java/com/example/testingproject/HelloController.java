@@ -1,14 +1,18 @@
 package com.example.testingproject;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class HelloController {
 
     @FXML
-    private PasswordField passwordtxt;
+    private TextField Usertxt;
 
     @FXML
-    private TextField usernametxt;
+    private Button loginbtn;
+
+    @FXML
+    private PasswordField passwordtxt;
 
 }
