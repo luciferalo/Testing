@@ -14,30 +14,44 @@ import javafx.stage.Stage;
 
 public class HomeController {
 
+    @FXML
     private Stage stage;
-
-
+    @FXML
+    private Scene scene;
+    @FXML
+    private Parent root;
     @FXML
     private Label label;
-
     @FXML
     private Button aflbtn;
-
     @FXML
     private Button depositbtn;
-
     @FXML
     private Button paybillsbtn;
-
     @FXML
     private Button showaccountbtn;
-
     @FXML
     private Button transferbtn;
-
     @FXML
     private Button withdrawbtn;
 
+@FXML
+void depositbtnclicked(ActionEvent event){
+    try {
+        FXMLLoader loader;
+        loader = new FXMLLoader(getClass().getResource("Deposit.fxml"));
+        root = loader.load();
 
+        DepositController depositController = loader.getController();
 
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    catch (Exception e) {
+        e.printStackTrace();
+        }
+
+    }
 }
