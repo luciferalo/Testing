@@ -7,37 +7,29 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class WithdrawController {
+public class LastPageController {
 
     @FXML
-    private Label approvedlabel;
-
-    @FXML
-    private Label failedlabel;
-
-    @FXML
-    private Button withdrawbtn;
-
-    @FXML
-    private TextField withdrawtxt;
+    private Button Nobtn;
     @FXML
     private Stage stage;
     @FXML
-    private Parent root;
-    @FXML
     private Scene scene;
     @FXML
-    void withdrawbtnclicked(ActionEvent event){
+    private Parent root;
+    @FXML
+    private Button Yesbtn;
+
+    @FXML
+    void yesbtnclicked(ActionEvent event){
         try {
             FXMLLoader loader;
-            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
+            loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
             root = loader.load();
 
-            LastPageController lastPageController = loader.getController();
+            ChoosingAccountController choosingAccountController = loader.getController();
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -47,5 +39,9 @@ public class WithdrawController {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    void Nobtnclicked(ActionEvent event){
+
     }
 }

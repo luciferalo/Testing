@@ -24,7 +24,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="withdrawbtn" layoutX="393.0" layoutY="264.0" mnemonicParsing="false" text="Withdraw">
+      <Button fx:id="withdrawbtn" layoutX="393.0" layoutY="264.0" mnemonicParsing="false" onAction="#withdrawbtnclicked" text="Withdraw">
          <font>
             <Font size="20.0" />
          </font>

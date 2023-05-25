@@ -94,4 +94,61 @@ void depositbtnclicked(ActionEvent event){
         }
 
     }
+
+    @FXML
+    void Applyforloadbtnclicked(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("ApplyForLoan.fxml"));
+            root = loader.load();
+
+            ApplyforloanController applyforloanController = loader.getController();
+
+            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void Paybillsbtnclicked(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("Paybills.fxml"));
+            root = loader.load();
+
+            PaybillsController paybillscontroller = loader.getController();
+
+            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void showaccountbtnclicked(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("ShowAccount.fxml"));
+            root = loader.load();
+
+            ShowAccountController showaccountcontroller = loader.getController();
+
+            stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

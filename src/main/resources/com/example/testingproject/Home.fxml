@@ -32,17 +32,17 @@
             <Font size="26.0" />
          </font>
       </Button>
-      <Button fx:id="aflbtn" layoutX="39.0" layoutY="521.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="191.0" style="-fx-background-color: #1e90ff;" text="Apply for loan" textAlignment="CENTER">
+      <Button fx:id="aflbtn" layoutX="39.0" layoutY="521.0" mnemonicParsing="false" onAction="#Applyforloadbtnclicked" prefHeight="56.0" prefWidth="191.0" style="-fx-background-color: #1e90ff;" text="Apply for loan" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="paybillsbtn" layoutX="421.0" layoutY="567.0" mnemonicParsing="false" style="-fx-background-color: #1e90ff;" text="Paybills">
+      <Button fx:id="paybillsbtn" layoutX="421.0" layoutY="567.0" mnemonicParsing="false" onAction="#Paybillsbtnclicked" style="-fx-background-color: #1e90ff;" text="Paybills">
          <font>
             <Font size="26.0" />
          </font>
       </Button>
-      <Button fx:id="showaccountbtn" layoutX="724.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: #1e90ff;" text="Show Account">
+      <Button fx:id="showaccountbtn" layoutX="724.0" layoutY="523.0" mnemonicParsing="false" onAction="#showaccountbtnclicked" style="-fx-background-color: #1e90ff;" text="Show Account">
          <font>
             <Font size="24.0" />
          </font>
