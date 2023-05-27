@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.DepositController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.DepositController">
    <children>
       <Label layoutX="338.0" layoutY="14.0" text="Deposit Page">
          <font>
@@ -25,10 +24,19 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="Depositbtn" layoutX="388.0" layoutY="298.0" mnemonicParsing="false" text="Deposit">
+      <Button fx:id="Depositbtn" layoutX="297.0" layoutY="299.0" mnemonicParsing="false" onAction="#Depositbtnclicked" text="Deposit">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
+      <Button fx:id="Backbtn" layoutX="482.0" layoutY="299.0" mnemonicParsing="false" onAction="#Backbtnclicked" prefHeight="52.0" prefWidth="119.0" text="Back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Logoutbtn" layoutX="745.0" layoutY="29.0" mnemonicParsing="false" onAction="#Logoutbtnclicked" text="Logout">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
    </children>
 </AnchorPane>

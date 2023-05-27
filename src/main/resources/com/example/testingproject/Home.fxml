@@ -27,7 +27,7 @@
             <Font size="26.0" />
          </font>
       </Button>
-      <Button fx:id="transferbtn" layoutX="752.0" layoutY="169.0" mnemonicParsing="false" style="-fx-background-color: #1e90ff;" text="Transfer">
+      <Button fx:id="transferbtn" layoutX="752.0" layoutY="169.0" mnemonicParsing="false" onAction="#transferbtnclicked" style="-fx-background-color: #1e90ff;" text="Transfer">
          <font>
             <Font size="26.0" />
          </font>
@@ -53,4 +53,13 @@
    <CubicCurve controlX1="15.4000244140625" controlX2="188.20001220703125" controlY1="-85.00003051757812" controlY2="-180.60000610351562" endX="179.39996337890625" endY="-100.60000610351562" fill="#fff5f5" layoutX="563.0" layoutY="583.0" startX="4.4000244140625" startY="-180.60000610351562" stroke="BLACK" />
    <Line endX="7.0" endY="19.0" layoutX="475.0" layoutY="231.0" startX="7.0" startY="-29.0" />
    <Line endX="-10.0" endY="11.999969482421875" layoutX="492.0" layoutY="483.0" startX="-10.0" startY="-33.000030517578125" />
+   <Button fx:id="ChangeAccbtn" layoutX="601.0" layoutY="14.0" mnemonicParsing="false" onAction="#ChangeAccbtnclicked" prefHeight="46.0" prefWidth="174.0" text="Change Account">
+      <font>
+         <Font size="20.0" />
+      </font></Button>
+   <Button fx:id="Logoutbtn" layoutX="785.0" layoutY="14.0" mnemonicParsing="false" onAction="#Logoutbtnclicked" prefHeight="46.0" prefWidth="122.0" text="Logout">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Button>
 </AnchorPane>

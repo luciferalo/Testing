@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.ApplyforloanController">
    <children>
       <Label layoutX="313.0" layoutY="14.0" text="Apply For Loan Page">
@@ -34,7 +33,17 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="Applybtn" layoutX="406.0" layoutY="251.0" mnemonicParsing="false" text="Apply">
+      <Button fx:id="Applybtn" layoutX="401.0" layoutY="251.0" mnemonicParsing="false" onAction="#Applybtnclicked" prefHeight="43.0" prefWidth="87.0" text="Apply">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Backbtn" layoutX="401.0" layoutY="438.0" mnemonicParsing="false" onAction="#Backbtnclicked" prefHeight="43.0" prefWidth="87.0" text="Back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Logoutbtn" layoutX="760.0" layoutY="24.0" mnemonicParsing="false" onAction="#Logoutbtnclicked" text="Logout">
          <font>
             <Font size="20.0" />
          </font>

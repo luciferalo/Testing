@@ -25,11 +25,21 @@
          </font>
       </Label>
       <TextField fx:id="Amunttxt" layoutX="500.0" layoutY="307.0" prefHeight="26.0" prefWidth="259.0" promptText="000.00" />
-      <Button fx:id="Paybtn" layoutX="399.0" layoutY="396.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="102.0" text="Pay">
+      <Button fx:id="Paybtn" layoutX="347.0" layoutY="389.0" mnemonicParsing="false" onAction="#Paybtnclicked" prefHeight="43.0" prefWidth="102.0" text="Pay">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <ComboBox fx:id="ComboBoxtxt" layoutX="501.0" layoutY="204.0" prefHeight="26.0" prefWidth="259.0" />
+      <Button fx:id="Backbtn" layoutX="540.0" layoutY="389.0" mnemonicParsing="false" onAction="#Backbtnclicked" prefHeight="43.0" prefWidth="102.0" text="Back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Logoutbtn" layoutX="759.0" layoutY="29.0" mnemonicParsing="false" onAction="#Logoutbtnclicked" text="Logout">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

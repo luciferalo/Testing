@@ -17,6 +17,8 @@ public class ChoosingAccountController {
     @FXML
     private Scene scene;
     @FXML
+    private Button Logoutbtn;
+    @FXML
     private Button Account2btn;
 
     @FXML
@@ -67,6 +69,24 @@ public class ChoosingAccountController {
             root = loader.load();
 
             HomeController homeController3 = loader.getController();
+
+            stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage1.setScene(scene);
+            stage1.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void Logoutbtnclicked(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            root = loader.load();
+
+            LoginController loginController = loader.getController();
 
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

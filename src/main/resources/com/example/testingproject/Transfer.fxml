@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.TransferController">
+<AnchorPane onDragDetected="#Transeferbtnclicked" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.TransferController">
    <children>
-      <Button fx:id="transferbtn" layoutX="713.0" layoutY="424.0" mnemonicParsing="false" text="Transfer">
+      <Button fx:id="transferbtn" layoutX="333.0" layoutY="436.0" mnemonicParsing="false" onAction="#Transeferbtnclicked" text="Transfer">
          <font>
             <Font size="20.0" />
          </font>
@@ -52,5 +51,15 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Button fx:id="Backbtn" layoutX="473.0" layoutY="436.0" mnemonicParsing="false" onAction="#Backbtnclicked" prefHeight="43.0" prefWidth="98.0" text="Back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Logoutbtn" layoutX="722.0" layoutY="38.0" mnemonicParsing="false" onAction="#Logoutbtnclicked" prefHeight="43.0" prefWidth="98.0" text="Logout">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

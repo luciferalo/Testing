@@ -40,8 +40,23 @@ public class LastPageController {
             e.printStackTrace();
         }
     }
-
+    @FXML
     void Nobtnclicked(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            root = loader.load();
+
+            LoginController loginController = loader.getController();
+
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 }

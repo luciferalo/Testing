@@ -15,6 +15,10 @@ public class WithdrawController {
 
     @FXML
     private Label approvedlabel;
+    @FXML
+    private Button Logoutbtn;
+    @FXML
+    private Button Backbtn;
 
     @FXML
     private Label failedlabel;
@@ -30,8 +34,9 @@ public class WithdrawController {
     private Parent root;
     @FXML
     private Scene scene;
+
     @FXML
-    void withdrawbtnclicked(ActionEvent event){
+    void withdrawbtnclicked(ActionEvent event) {
         try {
             FXMLLoader loader;
             loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
@@ -43,8 +48,43 @@ public class WithdrawController {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        catch (Exception e){
+    }
+
+    @FXML
+    void Backbtnclicked(ActionEvent event) {
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+            root = loader.load();
+
+            HomeController homeController = loader.getController();
+
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void Logoutbtnclicked(ActionEvent event) {
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            root = loader.load();
+
+            LoginController loginController = loader.getController();
+
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
