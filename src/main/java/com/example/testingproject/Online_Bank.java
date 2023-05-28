@@ -1,5 +1,7 @@
 package com.example.testingproject;
 
+import javafx.scene.control.PasswordField;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Online_Bank {
@@ -21,8 +23,8 @@ Online_Bank(){
 
             Online_Bank Bank = new Online_Bank();
         }
-        if(!start){
-        System.out.println("1.Create a new Account");
+        /*if(!start){
+       *//* System.out.println("1.Create a new Account");
         System.out.println("2.Login");
         System.out.print("Choice: ");
         int choice = input.nextInt();
@@ -32,30 +34,32 @@ Online_Bank(){
         }else if(choice == 2) {
             login();
             Online_Bank Bank = new Online_Bank();
-        }
-        }
+        }*//*
+        }*/
 }
 
 
-    private void login(){
-        input.nextLine();
+    public boolean login(String username, String password){
+        /*input.nextLine();
         System.out.print("Input username: ");
         String username = input.nextLine();
         System.out.print("Input password: ");
-        String password = input.nextLine();
+        String password = input.nextLine();*/
+
         for(Client c: clients){
             if(c.username.equals(username)){
                 if(c.password.equals(password)){
-                    userPage(c);
-                    return;
+                    //userPage(c);
+                    return true;
+
                 } else {
                     System.out.println("Wrong password");
-                    return;
+                    return false;
                 }
             }
         }
         System.out.println("No username found");
-        login();
+        return false;
     }
 
 
@@ -85,14 +89,14 @@ Online_Bank(){
         clients.add(new Client(name,id,usr_gender,no,0,pass,username));
     }
 
-void userPage(Client c){
+/*void userPage(Client c){
     Account destinationAcc;
 
 
     System.out.println("Welcome "+c.name+" ^^");
-    /*
+    *//*
     ur code to handle all Client implemented functions
-     */
+     *//*
 
     destinationAcc=find_Client_Acc("joe","A1");
     if(!destinationAcc.is_there(destinationAcc))
@@ -101,7 +105,7 @@ void userPage(Client c){
         System.out.println("Account Found! id: ["+destinationAcc.get_id()+"]");
     }
    return;
-}
+}*/
 
 Account find_Client_Acc(String usr_name,String Accid){           // for deliver destination (Acc) etc.......
     Account a=new Account(0,0);

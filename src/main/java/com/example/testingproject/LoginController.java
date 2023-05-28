@@ -27,8 +27,16 @@ public class LoginController {
     @FXML
     private PasswordField passwordtxt;
 
+
+
+    Online_Bank Bank=new Online_Bank(true);
+    Online_Bank text=new Online_Bank();
+
     @FXML
     void setLoginbtn(ActionEvent event) throws IOException {
+        String UserName= Usertxt.getText();
+        String pass= passwordtxt.getText();
+        if (text.login(UserName,pass)){
     try {
         FXMLLoader loader;
         loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
@@ -44,6 +52,7 @@ public class LoginController {
     catch (Exception e){
         e.printStackTrace();
         }
+    }
     }
 
 }
