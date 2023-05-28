@@ -17,8 +17,8 @@ Online_Bank(){
 
     Online_Bank(boolean start){
         if(start){  // initializer
-            clients.add(new Client("youssef", "3432", "Male", "2793864", 0, "1234", "joe"));
-            clients.add(new Client("layla", "0912","Female", "01927237", 0, "1234", "lily"));
+            clients.add(new Client("youssef", "3432", "Male", "2793864", 1000, "1234", "joe"));
+            clients.add(new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily"));
             clients.get(0).open_account(0);
 
             Online_Bank Bank = new Online_Bank();
@@ -49,7 +49,10 @@ Online_Bank(){
         for(Client c: clients){
             if(c.username.equals(username)){
                 if(c.password.equals(password)){
+                    //                                   c  = el specif client bta33y
                     //userPage(c);
+
+                    // fxml event (c)
                     return true;
 
                 } else {
