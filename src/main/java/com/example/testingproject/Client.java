@@ -82,6 +82,7 @@ public class Client {
 
     public boolean apply_for_loan(double amount,String Deadline){
         if(this.getVirtual_balance()<amount){
+            System.out.println("your request is not accepted :/");
             return false;
         }
         else{
@@ -115,16 +116,20 @@ public class Client {
     }
 
     public void open_account(double initial_balance) {             // add new account
-        Account account=new Account(initial_balance,++this.Num_Acc);
-        accounts.add(account);
+        if (Num_Acc!=3){
+            Account account=new Account(initial_balance,++this.Num_Acc);
+            accounts.add(account);
+        }else{
+            System.out.println("you have exceded the maximum number of acounts!");
+        }
+
     }
 
 
 
-    public void close_account(Account account) {
-        accounts.remove(account);
+    public void close_account(int AccNum) {
+        accounts.remove(this.getAccounts(AccNum));
         this.Num_Acc--;
-        //bank.remove_account(account);
     }
 
     //--------------------------------------------------------------------------------------------------------
