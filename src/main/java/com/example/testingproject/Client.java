@@ -6,7 +6,6 @@ public class Client {
     String name;
     String nationalID;
     String mobile;
-
     String username;
     String password;
      String gender;
