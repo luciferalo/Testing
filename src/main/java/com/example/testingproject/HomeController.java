@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 
 public class HomeController {
 
+
+    private int id;
+
     @FXML
     private Stage stage;
     @FXML
@@ -36,6 +39,13 @@ public class HomeController {
     private Button withdrawbtn;
     @FXML
     private Button ChangeAccbtn;
+
+
+    void setId (int id) {
+
+        this.id = id;
+
+    }
 
     @FXML
     void depositbtnclicked(ActionEvent event) {
@@ -137,6 +147,8 @@ public class HomeController {
             root = loader.load();
 
             ShowAccountController showaccountcontroller = loader.getController();
+            showaccountcontroller.setId(id);
+            showaccountcontroller.displayAccountData(id);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

@@ -27,6 +27,15 @@ public class ChoosingAccountController {
     @FXML
     private Button Acount1btn;
 
+    private int id;
+
+
+
+    void setId(int id) {
+        this.id =id;
+
+    }
+
     @FXML
     void account1clicked(ActionEvent event) {
         try {
@@ -35,6 +44,7 @@ public class ChoosingAccountController {
             root = loader.load();
 
             HomeController homeController1 = loader.getController();
+            homeController1.setId(id);
 
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -52,6 +62,7 @@ public class ChoosingAccountController {
             root = loader.load();
 
             HomeController homeController2 = loader.getController();
+            homeController2.setId(id);
 
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -69,6 +80,7 @@ public class ChoosingAccountController {
             root = loader.load();
 
             HomeController homeController3 = loader.getController();
+            homeController3.setId(id);
 
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

@@ -1,7 +1,5 @@
 package com.example.testingproject;
 
-import javafx.scene.control.PasswordField;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Online_Bank {
@@ -19,39 +17,25 @@ Online_Bank(){
         if(start){  // initializer
             clients.add(new Client("youssef", "3432", "Male", "2793864", 1000, "1234", "joe"));
             clients.add(new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily"));
-            clients.get(0).open_account(0);
+            //clients.get(0).open_account(0);
 
-            Online_Bank Bank = new Online_Bank();
+            //Online_Bank Bank = new Online_Bank();
         }
 
-        /*if(!start){
-       *//* System.out.println("1.Create a new Account");
-        System.out.println("2.Login");
-        System.out.print("Choice: ");
-        int choice = input.nextInt();
-        if(choice == 1){
-            createAccount();
-            Online_Bank Bank = new Online_Bank();
-        }else if(choice == 2) {
-            login();
-            Online_Bank Bank = new Online_Bank();
-        }*//*
-        }*/
+
 }
 
 
-    public boolean login(String username, String password){
-        /*input.nextLine();
-        System.out.print("Input username: ");
-        String username = input.nextLine();
-        System.out.print("Input password: ");
-        String password = input.nextLine();*/
+    public static boolean login(String username, String password){
+
 
         for(Client c: clients){
             if(c.username.equals(username)){
                 if(c.password.equals(password)){
                     //                                   c  = el specif client bta33y
                     //userPage(c);
+
+                  LoginController.setId(c.getId());
 
                     // fxml event (c)
                     return true;
@@ -157,5 +141,9 @@ Account find_Client_Acc(String usr_name,String Accid){           // for deliver 
 */
 
 
+    public static Client getClient (int id ) {
+
+        return clients.get(id);
+    }
 
 }

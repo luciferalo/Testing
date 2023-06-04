@@ -7,9 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class ShowAccountController {
+
+    private int id;
 
     @FXML
     private Parent root;
@@ -22,6 +25,16 @@ public class ShowAccountController {
 
     @FXML
     private Button Donebtn;
+
+    @FXML
+     private Label usernamelabel;
+
+
+    void setId (int id) {
+
+        this.id = id;
+
+    }
 
     @FXML
     void Backbtnclicked(ActionEvent event) {
@@ -61,5 +74,15 @@ public class ShowAccountController {
             e.printStackTrace();
         }
     }
+
+    void displayAccountData (int id) {
+
+        usernamelabel.setText(Online_Bank.getClient(id).username);
+
+
+
+    }
+
+
 
 }

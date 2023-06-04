@@ -19,6 +19,8 @@ public class LoginController {
     private Scene loginscene;
     private Parent loginroot;
 
+    private static int id;
+
     @FXML
     private Label failedlabel;
     @FXML
@@ -31,9 +33,22 @@ public class LoginController {
     private PasswordField passwordtxt;
 
 
+    //LoginController() {}
 
-    Online_Bank Bank=new Online_Bank(true);
-    Online_Bank text=new Online_Bank();
+
+    public  void  setId (int id) {
+
+        this.id = id;
+
+
+    }
+
+
+
+
+
+    //Online_Bank Bank=new Online_Bank(true);
+    Online_Bank text = new Online_Bank(true);
 
     @FXML
     void setLoginbtn(ActionEvent event) throws IOException {
@@ -46,6 +61,7 @@ public class LoginController {
         loginroot = loader.load();
 
         ChoosingAccountController choosingAccountController = loader.getController();
+        choosingAccountController.setId(id);
 
         loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         loginscene = new Scene(loginroot);

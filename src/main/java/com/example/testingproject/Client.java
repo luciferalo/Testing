@@ -10,6 +10,10 @@ public class Client {
     String password;
      String gender;
 
+     private static int clientId=0;
+
+     private int id;
+
     private double total_balance=0;
     private double virtual_balance=total_balance;
 
@@ -38,8 +42,21 @@ public class Client {
         this.gender = gender;
         this.mobile = mobile;
         this.open_account(initial_balance);
+        this.id = Client.clientId;
+        Client.clientId++;
+
+        System.out.println(id);
+
+
+
+
     }
-//----------------------------------------------------------------------------------------------------
+
+    public int getId() {
+        return this.id;
+    }
+
+    //----------------------------------------------------------------------------------------------------
     public Account getAccounts(int accno) {
         return this.accounts.get(accno-1);
     }
