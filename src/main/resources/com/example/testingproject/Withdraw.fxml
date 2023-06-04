@@ -19,9 +19,9 @@
          </font>
       </Label>
       <TextField fx:id="withdrawtxt" alignment="CENTER" layoutX="187.0" layoutY="179.0" prefHeight="46.0" prefWidth="526.0" promptText="0000,00" />
-      <Label fx:id="approvedlabel" layoutX="84.0" layoutY="360.0">
+      <Label fx:id="approvedlabel" layoutX="84.0" layoutY="360.0" text="  " textFill="LIME">
          <font>
-            <Font size="30.0" />
+            <Font size="25.0" />
          </font>
       </Label>
       <Button fx:id="withdrawbtn" layoutX="293.0" layoutY="264.0" mnemonicParsing="false" onAction="#withdrawbtnclicked" text="Withdraw">
@@ -29,7 +29,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Label fx:id="failedlabel" layoutX="64.0" layoutY="425.0">
+      <Label fx:id="failedlabel" layoutX="85.0" layoutY="365.0" text="  " textFill="RED">
          <font>
             <Font size="25.0" />
          </font>

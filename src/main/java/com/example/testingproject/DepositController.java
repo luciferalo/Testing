@@ -32,6 +32,8 @@ public class DepositController {
     @FXML
     private TextField Deposittxt;
 
+    int amount;
+
     @FXML
     void Backbtnclicked(ActionEvent event) {
         try {
@@ -69,20 +71,22 @@ public class DepositController {
 
     @FXML
     void Depositbtnclicked(ActionEvent event){
-        try {
-            FXMLLoader loader;
-            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-            root = loader.load();
-
-            LastPageController lastPageController = loader.getController();
-
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        amount = Integer.parseInt(Deposittxt.getText());
+        DepositOutLabel.setText("your new balance is equals " + amount);
+//        try {
+//            FXMLLoader loader;
+//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
+//            root = loader.load();
+//
+//            LastPageController lastPageController = loader.getController();
+//
+//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            scene = new Scene(root);
+//            stage.setScene(scene);
+//            stage.show();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
 }

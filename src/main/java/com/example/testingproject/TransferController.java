@@ -40,6 +40,9 @@ public class TransferController {
     @FXML
     private Button transferbtn;
 
+    int amount;
+    public String name;
+
     @FXML
     void Logoutbtnclicked(ActionEvent event){
         try {
@@ -77,20 +80,29 @@ public class TransferController {
     }
     @FXML
     void Transeferbtnclicked(ActionEvent event){
-        try {
-            FXMLLoader loader;
-            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-            root = loader.load();
-
-            LastPageController lastPageController = loader.getController();
-
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+        amount= Integer.parseInt(amounttxt.getText());
+        if(amount <= 1000 ) {
+            approvelabel.setText("Transfer completed and your new balance is equal to " + (1000-amount));
+            failedlabel.setText("");
         }
-        catch (Exception e){
-            e.printStackTrace();
+        else {
+            failedlabel.setText("Transfer failed due to insufficient balance");
+            approvelabel.setText("");
         }
+//        try {
+//            FXMLLoader loader;
+//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
+//            root = loader.load();
+//
+//            LastPageController lastPageController = loader.getController();
+//
+//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            scene = new Scene(root);
+//            stage.setScene(scene);
+//            stage.show();
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
     }
 }

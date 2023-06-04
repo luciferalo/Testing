@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,9 +20,14 @@ public class PaybillsController {
 
     @FXML
     private TextField Amunttxt;
-
+    @FXML
+    private Label Approve;
+    @FXML
+    private Button Backbtn;
     @FXML
     private ComboBox<String> ComboBoxtxt;
+    @FXML
+    private Label Denied;
     @FXML
     private Parent root;
     @FXML
@@ -32,8 +38,8 @@ public class PaybillsController {
     private Button Paybtn;
     @FXML
     private Button Logoutbtn;
-    @FXML
-    private Button Backbtn;
+
+    int amount;
 
     @FXML
     public void inisialize(URL url, ResourceBundle resourceBundle){
@@ -78,19 +84,28 @@ public class PaybillsController {
 
     @FXML
     void Paybtnclicked(ActionEvent event){
-        try {
-            FXMLLoader loader;
-            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-            root = loader.load();
-
-            LastPageController lastPageController = loader.getController();
-
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        amount = Integer.parseInt(Amunttxt.getText());
+        if(amount <= 1000) {
+            Approve.setText("Approved and your new balance is equals " + (1000-amount));
+            Denied.setText("");
         }
+        else {
+            Denied.setText("Transaction denied duo to insufficient balance. Your balance is "+ 1000);
+            Approve.setText("");
+        }
+//        try {
+//            FXMLLoader loader;
+//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
+//            root = loader.load();
+//
+//            LastPageController lastPageController = loader.getController();
+//
+//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            scene = new Scene(root);
+//            stage.setScene(scene);
+//            stage.show();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }

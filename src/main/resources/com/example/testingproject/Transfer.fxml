@@ -41,12 +41,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="approvelabel" layoutX="55.0" layoutY="486.0" text="Label">
+      <Label fx:id="approvelabel" alignment="CENTER" layoutX="55.0" layoutY="486.0" text="  " textFill="LIME">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="failedlabel" layoutX="55.0" layoutY="538.0" text="Label">
+      <Label fx:id="failedlabel" alignment="CENTER" layoutX="55.0" layoutY="486.0" text="  " textFill="RED">
          <font>
             <Font size="20.0" />
          </font>

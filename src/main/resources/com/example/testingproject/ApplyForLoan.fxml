@@ -23,22 +23,22 @@
             <Font size="20.0" />
          </font>
       </TextField>
-      <Label fx:id="Loanapprovedlabel" layoutX="382.0" layoutY="295.0" text="Loan Approved" textFill="LIME">
+      <Label fx:id="Loanapprovedlabel" layoutX="37.0" layoutY="329.0" text="  " textFill="LIME">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="Loandeniedlabel" layoutX="394.0" layoutY="335.0" text="Loan Denied" textFill="RED">
+      <Label fx:id="Loandeniedlabel" layoutX="37.0" layoutY="329.0" text="  " textFill="RED">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="Applybtn" layoutX="401.0" layoutY="251.0" mnemonicParsing="false" onAction="#Applybtnclicked" prefHeight="43.0" prefWidth="87.0" text="Apply">
+      <Button fx:id="Applybtn" layoutX="313.0" layoutY="251.0" mnemonicParsing="false" onAction="#Applybtnclicked" prefHeight="43.0" prefWidth="87.0" text="Apply">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="Backbtn" layoutX="401.0" layoutY="438.0" mnemonicParsing="false" onAction="#Backbtnclicked" prefHeight="43.0" prefWidth="87.0" text="Back">
+      <Button fx:id="Backbtn" layoutX="489.0" layoutY="251.0" mnemonicParsing="false" onAction="#Backbtnclicked" prefHeight="43.0" prefWidth="87.0" text="Back">
          <font>
             <Font size="20.0" />
          </font>

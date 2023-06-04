@@ -17,42 +17,38 @@
             <Image url="@login_background.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="14.0" layoutY="64.0" opacity="0.56" prefHeight="580.0" prefWidth="398.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="14.0" layoutY="64.0" opacity="0.5" prefHeight="580.0" prefWidth="398.0" style="-fx-background-color: #000000;">
          <children>
             <Label layoutX="68.0" layoutY="14.0" text="Login Page" textFill="#0015ff">
                <font>
                   <Font size="50.0" />
                </font>
             </Label>
-            <PasswordField fx:id="passwordtxt" alignment="CENTER" layoutX="15.0" layoutY="280.0" promptText="Enter your Password" style="-fx-background-color: #212121;">
+            <PasswordField fx:id="passwordtxt" alignment="CENTER" layoutX="15.0" layoutY="280.0" promptText="Enter your Password" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="30.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></PasswordField>
-            <TextField fx:id="Usertxt" alignment="CENTER" layoutX="15.0" layoutY="159.0" promptText="Enter your username" style="-fx-background-color: #212121;">
+            <TextField fx:id="Usertxt" alignment="CENTER" layoutX="15.0" layoutY="159.0" promptText="Enter your username" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="30.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></TextField>
-            <Button fx:id="loginbtn" alignment="CENTER" layoutX="68.0" layoutY="430.0" mnemonicParsing="false" onAction="#setLoginbtn" style="-fx-background-color: #ffffff;" text="Login">
+            <Button fx:id="loginbtn" alignment="CENTER" layoutX="135.0" layoutY="386.0" mnemonicParsing="false" onAction="#setLoginbtn" prefHeight="52.0" prefWidth="128.0" style="-fx-background-color: #ffffff;" text="Login">
                <font>
                   <Font size="25.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button alignment="CENTER" layoutX="232.0" layoutY="430.0" mnemonicParsing="false" text="Register">
+            <Label fx:id="failedlabel" alignment="CENTER" layoutX="15.0" layoutY="455.0" text="  " textFill="RED">
                <font>
-                  <Font size="25.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+                  <Font name="System Bold" size="25.0" />
+               </font></Label>
          </children>
       </AnchorPane>
    </children>
