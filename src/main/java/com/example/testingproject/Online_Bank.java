@@ -23,6 +23,7 @@ Online_Bank(){
 
             Online_Bank Bank = new Online_Bank();
         }
+
         /*if(!start){
        *//* System.out.println("1.Create a new Account");
         System.out.println("2.Login");
@@ -79,8 +80,6 @@ Online_Bank(){
         }
         System.out.print("enter your name: ");
         String name = input.nextLine();
-        System.out.print("Gender: ");
-        String gender = input.nextLine();
         System.out.print("Input NationalID: ");
         String id = input.nextLine();
         System.out.print("Enter your mobile number: ");

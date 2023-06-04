@@ -19,14 +19,16 @@ public class ClientTransactionsTest {
 
     @Test
     public void testMakeDeposit1() {
-        client.make_deposit(account, 500.0);
-        assertEquals(1500.0, client.getTotal_balance(), 0.0);
-        setUp();
-    }
-    @Test
-    public void testMakeDeposit2() {
         client.make_deposit(account, 1000.0);
         assertEquals(2000.0, client.getTotal_balance(), 0.0);
+        setUp();
+    }
+    @Test   // Advanced
+    public void testNegativeDeposit() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            client.make_deposit(account, -500.0);
+        });
+        assertEquals("Invalid Deposit Amount!", exception.getMessage());
         setUp();
     }
 
@@ -62,13 +64,21 @@ public class ClientTransactionsTest {
         assertEquals("Insufficient funds.", exception.getMessage());
     }
 
+    @Test    // Advanced
+    public void testTransferToNonExistentAccount() {
+        Account nonExistentAccount = new Account(2, 0);      // initializing trash account
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            client.transfer_money(account, nonExistentAccount, 500.0);
+        });
+        assertEquals("Destination Account does not exist!", exception.getMessage());
+        setUp();
+    }
     @Test
     public void testPayBill() {
         client.pay_bill("Electricity", account, 100.0);
         assertEquals(900.0, client.getTotal_balance(), 0.0);
         setUp();
     }
-
 
 }
 

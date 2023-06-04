@@ -11,13 +11,18 @@ boolean is_there(Account a){
     public Account( double initial_balance,int counter) {
         this.id_counter=counter;
         this.balance = initial_balance;
-        this.id = "A" + id_counter;
+        this.id =  "A" + id_counter;
 
     }
 
     public void deposit(double amount) {
+    if(amount>0){
         balance += amount;
-        new Deposit(this, amount);
+        new Deposit(this, amount);}
+    else{
+        System.out.println("Exception <<Invalid Deposit Amount!>>");
+        throw new IllegalArgumentException("Invalid Deposit Amount!");
+    }
     }
 
     public void withdraw(double amount) {
@@ -31,6 +36,9 @@ boolean is_there(Account a){
     public void transfer_to(Account destination, double amount) {
         if (balance < amount) {
             throw new IllegalArgumentException("Insufficient funds.");
+        }
+        if (!is_there(destination)){
+            throw new IllegalArgumentException("Destination Account does not exist!");
         }
         balance -= amount;
         destination.deposit(amount);
