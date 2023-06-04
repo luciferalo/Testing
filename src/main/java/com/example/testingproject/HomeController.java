@@ -181,6 +181,7 @@ public class HomeController {
     void Logoutbtnclicked(ActionEvent event){
         try {
             FXMLLoader loader;
+            LoginController.start=false;
             loader = new FXMLLoader(getClass().getResource("Login.fxml"));
             root = loader.load();
 

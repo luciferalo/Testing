@@ -32,8 +32,8 @@ public class LoginController {
     @FXML
     private PasswordField passwordtxt;
 
+  static boolean start=true;
 
-    //LoginController() {}
 
 
     public  void  setId (int id) {
@@ -43,12 +43,7 @@ public class LoginController {
 
     }
 
-
-
-
-
-    //Online_Bank Bank=new Online_Bank(true);
-    Online_Bank text = new Online_Bank(true);
+    Online_Bank text = new Online_Bank(LoginController.start);
 
     @FXML
     void setLoginbtn(ActionEvent event) throws IOException {

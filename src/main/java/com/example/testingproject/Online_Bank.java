@@ -10,19 +10,14 @@ public class Online_Bank {
 Online_Bank(){
     this(false);
 }
-
-
-
     Online_Bank(boolean start){
         if(start){  // initializer
             clients.add(new Client("youssef", "3432", "Male", "2793864", 1000, "1234", "joe"));
             clients.add(new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily"));
             //clients.get(0).open_account(0);
-
+             LoginController.start=false;
             //Online_Bank Bank = new Online_Bank();
         }
-
-
 }
 
 
@@ -35,7 +30,9 @@ Online_Bank(){
                     //                                   c  = el specif client bta33y
                     //userPage(c);
 
-                  LoginController.setId(c.getId());
+                  LoginController g= new LoginController();
+                  LoginController.start=true;
+                     g.setId(c.getId());
 
                     // fxml event (c)
                     return true;
@@ -49,8 +46,6 @@ Online_Bank(){
         System.out.println("No username found");
         return false;
     }
-
-
 
     public void createAccount(){
         System.out.print("Input a [unique] username: ");
@@ -111,9 +106,6 @@ Account find_Client_Acc(String usr_name,String Accid){           // for deliver 
         return a;
 }
 
-
-
-
                     ///            Sample Client
 /*
 
@@ -139,7 +131,6 @@ Account find_Client_Acc(String usr_name,String Accid){           // for deliver 
     //System.out.println(c1.getLoans(2).get_amount());
         System.out.println("Total Loan = "+c1.getTotal_loan());
 */
-
 
     public static Client getClient (int id ) {
 
