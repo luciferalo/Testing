@@ -37,6 +37,14 @@ public class ApplyforloanController {
 
     int loanamount;
 
+    private int id;
+
+    void setId (int id) {
+
+        this.id = id;
+
+    }
+
     @FXML
     void Backbtnclicked(ActionEvent event) {
         try {
@@ -60,6 +68,7 @@ public class ApplyforloanController {
     void Logoutbtnclicked(ActionEvent event){
         try {
             FXMLLoader loader;
+            LoginController.start=false;
             loader = new FXMLLoader(getClass().getResource("Login.fxml"));
             root = loader.load();
 

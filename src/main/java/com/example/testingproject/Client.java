@@ -84,6 +84,12 @@ public class Client {
         return total_balance;
     }
 
+    public void setTotal_balance(double amount) {
+
+        this.total_balance += amount;
+    }
+
+
     public double getVirtual_balance() {
         if(this.num_loan==0){
             this.virtual_balance=this.getTotal_balance();

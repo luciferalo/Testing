@@ -55,6 +55,7 @@ public class HomeController {
             root = loader.load();
 
             DepositController depositController = loader.getController();
+            depositController.setId(id);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -74,6 +75,8 @@ public class HomeController {
             root = loader.load();
 
             WithdrawController withdrawController = loader.getController();
+            withdrawController.setId(id);
+
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -92,6 +95,7 @@ public class HomeController {
             root = loader.load();
 
             TransferController transferController = loader.getController();
+            transferController.setId(id);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -111,6 +115,7 @@ public class HomeController {
             root = loader.load();
 
             ApplyforloanController applyforloanController = loader.getController();
+            applyforloanController.setId(id);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -129,6 +134,7 @@ public class HomeController {
             root = loader.load();
 
             PaybillsController paybillscontroller = loader.getController();
+            paybillscontroller.setId(id);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

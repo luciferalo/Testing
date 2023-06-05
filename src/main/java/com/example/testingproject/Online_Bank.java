@@ -12,7 +12,7 @@ Online_Bank(){
 }
     Online_Bank(boolean start){
         if(start){  // initializer
-            clients.add(new Client("youssef", "3432", "Male", "2793864", 1000, "1234", "joe"));
+            clients.add(new Client("youssef", "3432", "Male", "2793864", 1200, "1234", "joe"));
             clients.add(new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily"));
             //clients.get(0).open_account(0);
              LoginController.start=false;

@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 public class WithdrawController {
 
+    private int id;
+
     @FXML
     private Label approvedlabel;
     @FXML
@@ -36,32 +38,35 @@ public class WithdrawController {
     private Scene scene;
     int amount;
 
+
+    void setId (int id) {
+
+        this.id = id;
+
+    }
+
     @FXML
     void withdrawbtnclicked(ActionEvent event) {
-        amount = Integer.parseInt(withdrawtxt.getText());
-        if (amount<=1000){
-            approvedlabel.setText("Transaction is completed successfully and your new balance is "+ (1000-amount));
-            failedlabel.setText("");
-        }
-        else {
-            failedlabel.setText("Transaction failed duo to insufficient balance. Your balance is " + 1000);
+        try {
+            amount = Integer.parseInt(withdrawtxt.getText());
+            if (amount > 0) {
+                if (amount <= 1000) {
+                    approvedlabel.setText("Transaction is completed successfully and your new balance is "+ (1000-amount));
+                    failedlabel.setText("");
+                } else {
+                    failedlabel.setText("Transaction failed due to insufficient balance. Your balance is " + 1000);
+                    approvedlabel.setText("");
+                }
+            } else {
+                // show error message if input is negative or zero
+                failedlabel.setText("Invalid withdrawal amount. Please enter a positive value.");
+                approvedlabel.setText("");
+            }
+        } catch (NumberFormatException e) {
+            // show error message if input is not a valid integer
+            failedlabel.setText("Invalid withdrawal amount. Please enter a valid integer.");
             approvedlabel.setText("");
         }
-
-//        try {
-//            FXMLLoader loader;
-//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-//            root = loader.load();
-//
-//            LastPageController lastPageController = loader.getController();
-//
-//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 
     @FXML
@@ -86,6 +91,7 @@ public class WithdrawController {
     void Logoutbtnclicked(ActionEvent event) {
         try {
             FXMLLoader loader;
+            LoginController.start=false;
             loader = new FXMLLoader(getClass().getResource("Login.fxml"));
             root = loader.load();
 

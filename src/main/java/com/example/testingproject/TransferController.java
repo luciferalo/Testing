@@ -43,10 +43,20 @@ public class TransferController {
     int amount;
     public String name;
 
+
+    private int id;
+
+    void setId (int id) {
+
+        this.id = id;
+
+    }
+
     @FXML
     void Logoutbtnclicked(ActionEvent event){
         try {
             FXMLLoader loader;
+            LoginController.start=false;
             loader = new FXMLLoader(getClass().getResource("Login.fxml"));
             root = loader.load();
 

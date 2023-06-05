@@ -41,6 +41,14 @@ public class PaybillsController {
 
     int amount;
 
+    private int id;
+
+    void setId (int id) {
+
+        this.id = id;
+
+    }
+
     @FXML
     public void inisialize(URL url, ResourceBundle resourceBundle){
         ComboBoxtxt.setItems(FXCollections.observableArrayList("Electricity","Water","University fees","Gas"));
@@ -50,7 +58,9 @@ public class PaybillsController {
     void Logoutbtnclicked(ActionEvent event){
         try {
             FXMLLoader loader;
+            LoginController.start=false;
             loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+
             root = loader.load();
 
             LoginController loginController = loader.getController();
@@ -85,12 +95,13 @@ public class PaybillsController {
     @FXML
     void Paybtnclicked(ActionEvent event){
         amount = Integer.parseInt(Amunttxt.getText());
-        if(amount <= 1000) {
-            Approve.setText("Approved and your new balance is equals " + (1000-amount));
+        if(amount <= Online_Bank.getClient(id).getTotal_balance()) {
+            Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getTotal_balance()-amount));
             Denied.setText("");
+
         }
         else {
-            Denied.setText("Transaction denied duo to insufficient balance. Your balance is "+ 1000);
+            Denied.setText("Transaction denied duo to insufficient balance. Your balance is "+ Online_Bank.getClient(id).getTotal_balance());
             Approve.setText("");
         }
 //        try {
