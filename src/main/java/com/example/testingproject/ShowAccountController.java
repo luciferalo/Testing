@@ -28,6 +28,21 @@ public class ShowAccountController {
 
     @FXML
      private Label usernamelabel;
+    @FXML
+    private Label balancelabel;
+
+    @FXML
+    private Label genderlabel;
+
+    @FXML
+    private Label loanlabel;
+
+    @FXML
+    private Label mobilelabel;
+
+    @FXML
+    private Label nationalIdLabel;
+
 
 
     void setId (int id) {
@@ -76,13 +91,16 @@ public class ShowAccountController {
     }
 
     void displayAccountData (int id) {
+        double balance = Online_Bank.getClient(id).getTotal_balance();
+        String totalbalance = Double.toString(balance);
+        double loan = Online_Bank.getClient(id).getTotal_loan();
+        String totalloan = Double.toString(loan);
 
         usernamelabel.setText(Online_Bank.getClient(id).username);
-
-
-
+        nationalIdLabel.setText(Online_Bank.getClient(id).nationalID);
+        genderlabel.setText(Online_Bank.getClient(id).gender);
+        mobilelabel.setText(Online_Bank.getClient(id).mobile);
+        balancelabel.setText(totalbalance);
+        loanlabel.setText(totalloan);
     }
-
-
-
 }
