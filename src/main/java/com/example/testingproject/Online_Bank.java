@@ -14,7 +14,9 @@ Online_Bank(){
         if(start){  // initializer
             clients.add(new Client("youssef", "3432", "Male", "2793864", 1200, "1234", "joe"));
             clients.add(new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily"));
-            //clients.get(0).open_account(0);
+            //clients.get(0).open_account(1200);
+            //clients.get(0).open_account(Online_Bank.getClient(0).getTotal_balance());
+            clients.get(0).open_account(3000);
              LoginController.start=false;
             //Online_Bank Bank = new Online_Bank();
         }

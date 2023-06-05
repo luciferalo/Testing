@@ -8,11 +8,11 @@ public class Client {
     String mobile;
     String username;
     String password;
-     String gender;
+    String gender;
 
-     private static int clientId=0;
+    private static int clientId=0;
 
-     private int id;
+    private int id;
 
     private double total_balance=0;
     private double virtual_balance=total_balance;
@@ -37,11 +37,11 @@ public class Client {
         this.username=user_name;
         accounts = new ArrayList<>();
         loans=new ArrayList<>();
+        this.open_account(initial_balance);
         this.name = name;
         this.nationalID = nationalID;
         this.gender = gender;
         this.mobile = mobile;
-        this.open_account(initial_balance);
         this.id = Client.clientId;
         Client.clientId++;
 
@@ -92,10 +92,10 @@ public class Client {
             this.virtual_balance=this.getTotal_balance();
         }
         else{
-        this.virtual_balance=this.getTotal_balance()-this.getTotal_loan();
+            this.virtual_balance=this.getTotal_balance()-this.getTotal_loan();
             System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
 
-    }
+        }
         return this.virtual_balance;
     }
 
@@ -113,7 +113,7 @@ public class Client {
         }
 
     }
-//-----------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------
     public void make_deposit(Account account, double amount) {
         account.deposit(amount);
         new Deposit(account, amount);
@@ -135,11 +135,20 @@ public class Client {
     }
 
     public void open_account(double initial_balance) {             // add new account
-        if (Num_Acc!=3){
-            Account account=new Account(initial_balance,++this.Num_Acc);
+        // if (Num_Acc!=3){
+        //     Account account=new Account(initial_balance,++this.Num_Acc);
+        // accounts.add(account);
+        // }else{
+        // System.out.println("you have exceded the maximum number of acounts!");
+        //}
+
+        if (this.Num_Acc<3) {
+
+
+            Num_Acc++;
+            Account account = new Account(initial_balance,Num_Acc);
             accounts.add(account);
-        }else{
-            System.out.println("you have exceeded the maximum number of accounts!");
+
         }
 
     }

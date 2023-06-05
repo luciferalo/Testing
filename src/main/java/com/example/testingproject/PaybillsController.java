@@ -101,16 +101,30 @@ public class PaybillsController {
 
     @FXML
     void Paybtnclicked(ActionEvent event){
-        amount = Integer.parseInt(Amunttxt.getText());
-        if(amount <= Online_Bank.getClient(id).getAccounts(account_no).get_balance()) {
-            Online_Bank.getClient(id).getAccounts(id).set_balance(-1*amount);
-            Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
-            totalbalancelabel.setText("your total balance is equals " + Online_Bank.getClient(id).getTotal_balance());
-            Denied.setText("");
+        try {
+            amount = Integer.parseInt(Amunttxt.getText());
+            if (amount > 0) {
+                if (amount <= Online_Bank.getClient(id).getAccounts(account_no).get_balance()) {
+                    Online_Bank.getClient(id).getAccounts(account_no).set_balance(-1 * amount);
+                    Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
+                    totalbalancelabel.setText("your total balance is equals " + Online_Bank.getClient(id).getTotal_balance());
+                    Denied.setText("");
+                } else {
+                    Denied.setText("Transaction denied duo to insufficient balance. Your balance is " + Online_Bank.getClient(id).getAccounts(account_no).get_balance());
+                    Approve.setText("");
+                }
+            }
+            else {
+                Denied.setText("Invalid amount. Please enter a positive integer.");
+                Approve.setText("");}
+
         }
-        else {
-            Denied.setText("Transaction denied duo to insufficient balance. Your balance is "+ Online_Bank.getClient(id).getAccounts(account_no).get_balance());
+        catch (NumberFormatException E) {
+
+            Denied.setText("Invalid amount. Please enter a valid integer.");
             Approve.setText("");
+
+        }
         }
     }
-}
+
