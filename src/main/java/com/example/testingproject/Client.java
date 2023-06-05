@@ -139,7 +139,7 @@ public class Client {
             Account account=new Account(initial_balance,++this.Num_Acc);
             accounts.add(account);
         }else{
-            System.out.println("you have exceded the maximum number of acounts!");
+            System.out.println("you have exceeded the maximum number of accounts!");
         }
 
     }
