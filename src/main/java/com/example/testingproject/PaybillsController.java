@@ -38,6 +38,9 @@ public class PaybillsController {
     private Button Paybtn;
     @FXML
     private Button Logoutbtn;
+    @FXML
+    private Label totalbalancelabel;
+
 
     int amount;
 
@@ -99,29 +102,15 @@ public class PaybillsController {
     @FXML
     void Paybtnclicked(ActionEvent event){
         amount = Integer.parseInt(Amunttxt.getText());
-        if(amount <= Online_Bank.getClient(id).getTotal_balance()) {
+        if(amount <= Online_Bank.getClient(id).getAccounts(account_no).get_balance()) {
             Online_Bank.getClient(id).getAccounts(id).set_balance(-1*amount);
-            Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getTotal_balance()));
+            Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
+            totalbalancelabel.setText("your total balance is equals " + Online_Bank.getClient(id).getTotal_balance());
             Denied.setText("");
-
         }
         else {
-            Denied.setText("Transaction denied duo to insufficient balance. Your balance is "+ Online_Bank.getClient(id).getTotal_balance());
+            Denied.setText("Transaction denied duo to insufficient balance. Your balance is "+ Online_Bank.getClient(id).getAccounts(account_no).get_balance());
             Approve.setText("");
         }
-//        try {
-//            FXMLLoader loader;
-//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-//            root = loader.load();
-//
-//            LastPageController lastPageController = loader.getController();
-//
-//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 }

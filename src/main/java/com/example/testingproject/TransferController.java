@@ -103,20 +103,5 @@ public class TransferController {
             failedlabel.setText("Transfer failed due to insufficient balance");
             approvelabel.setText("");
         }
-//        try {
-//            FXMLLoader loader;
-//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-//            root = loader.load();
-//
-//            LastPageController lastPageController = loader.getController();
-//
-//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//        }
-//        catch (Exception e){
-//            e.printStackTrace();
-//        }
     }
 }

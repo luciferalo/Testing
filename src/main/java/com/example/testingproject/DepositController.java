@@ -31,6 +31,8 @@ public class DepositController {
 
     @FXML
     private TextField Deposittxt;
+    @FXML
+    private Label DepositOutLabel1;
 
     int amount;
 
@@ -84,24 +86,22 @@ public class DepositController {
 
     @FXML
     void Depositbtnclicked(ActionEvent event){
-        amount = Integer.parseInt(Deposittxt.getText());
-        Online_Bank.getClient(id).getAccounts(account_no).set_balance(amount);
-        DepositOutLabel.setText("your new balance is equals " +  (Online_Bank.getClient(id).getTotal_balance()));
-
-//        try {
-//            FXMLLoader loader;
-//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-//            root = loader.load();
-//
-//            LastPageController lastPageController = loader.getController();
-//
-//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try{
+            amount = Integer.parseInt(Deposittxt.getText());
+            if(amount >0 ){
+            Online_Bank.getClient(id).getAccounts(account_no).set_balance(amount);
+            DepositOutLabel.setText("your new balance in account " + account_no + "is equal " +  (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
+            DepositOutLabel1.setText("your total balance is equals " + (Online_Bank.getClient(id).getTotal_balance()));
+            }
+            else {
+                DepositOutLabel1.setText("invalid amount please enter a positive value");
+            }
+        }
+        catch (NumberFormatException e) {
+            // show error message if input is not a valid integer
+            DepositOutLabel.setText("Invalid Deposit amount. Please enter a valid integer.");
+            DepositOutLabel1.setText("");
+        }
     }
 
 }

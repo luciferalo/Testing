@@ -98,20 +98,5 @@ public class ApplyforloanController {
             Loandeniedlabel.setText("Loan denied for insufficient balance. Your balance is " + 1000);
             Loanapprovedlabel.setText("");
         }
-//        try {
-//            FXMLLoader loader;
-//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-//            root = loader.load();
-//
-//            LastPageController lastPageController = loader.getController();
-//
-//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
-
 }
