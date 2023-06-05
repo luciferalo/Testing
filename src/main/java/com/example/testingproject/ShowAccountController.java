@@ -23,8 +23,8 @@ public class ShowAccountController {
     @FXML
     private Button Backbtn;
 
-    @FXML
-    private Button Donebtn;
+//    @FXML
+//    private Button Donebtn;
 
     @FXML
      private Label usernamelabel;
@@ -76,24 +76,24 @@ public class ShowAccountController {
     }
 
     @FXML
-    void Donebtnclicked(ActionEvent event) {
-        try {
-            FXMLLoader loader;
-            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-            root = loader.load();
-
-            LastPageController lastPageController = loader.getController();
-
-
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-    }
+//    void Donebtnclicked(ActionEvent event) {
+//        try {
+//            FXMLLoader loader;
+//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
+//            root = loader.load();
+//
+//            LastPageController lastPageController = loader.getController();
+//
+//
+//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            scene = new Scene(root);
+//            stage.setScene(scene);
+//            stage.show();
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
 
     void displayAccountData (int id) {
         double balance = Online_Bank.getClient(id).getTotal_balance();

@@ -100,7 +100,8 @@ public class PaybillsController {
     void Paybtnclicked(ActionEvent event){
         amount = Integer.parseInt(Amunttxt.getText());
         if(amount <= Online_Bank.getClient(id).getTotal_balance()) {
-            Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getTotal_balance()-amount));
+            Online_Bank.getClient(id).getAccounts(id).set_balance(-1*amount);
+            Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getTotal_balance()));
             Denied.setText("");
 
         }

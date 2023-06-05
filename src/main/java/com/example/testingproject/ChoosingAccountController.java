@@ -28,12 +28,12 @@ public class ChoosingAccountController {
     private Button Acount1btn;
 
     private int id;
+    private int account_no;
 
 
 
     void setId(int id) {
         this.id =id;
-
     }
 
     @FXML

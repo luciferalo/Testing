@@ -177,6 +177,7 @@ public class HomeController {
             root = loader.load();
 
             ChoosingAccountController choosingAccountController = loader.getController();
+            choosingAccountController.setId(id);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

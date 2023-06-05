@@ -81,6 +81,7 @@ public class TransferController {
             root = loader.load();
 
             HomeController homeController = loader.getController();
+            homeController.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
