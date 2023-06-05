@@ -46,9 +46,12 @@ public class TransferController {
 
     private int id;
 
-    void setId (int id) {
+    private int account_no;
+
+    void setId (int id,int account_no) {
 
         this.id = id;
+        this.account_no = account_no;
 
     }
 

@@ -36,10 +36,12 @@ public class DepositController {
 
 
     private int id;
+    private int account_no;
 
-    void setId (int id) {
+    void setId (int id,int account_no) {
 
         this.id = id;
+        this.account_no = account_no;
 
     }
 
@@ -51,7 +53,7 @@ public class DepositController {
             root = loader.load();
 
             HomeController homeController = loader.getController();
-            homeController.setId(id);
+            homeController.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -83,7 +85,7 @@ public class DepositController {
     @FXML
     void Depositbtnclicked(ActionEvent event){
         amount = Integer.parseInt(Deposittxt.getText());
-        Online_Bank.getClient(id).setTotal_balance(amount);
+        Online_Bank.getClient(id).getAccounts(account_no).set_balance(amount);
         DepositOutLabel.setText("your new balance is equals " +  (Online_Bank.getClient(id).getTotal_balance()));
 
 //        try {

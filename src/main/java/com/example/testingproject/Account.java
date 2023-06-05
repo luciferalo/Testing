@@ -53,6 +53,11 @@ boolean is_there(Account a){
         return balance;
     }
 
+    public void set_balance(double amount) {
+
+        this.balance += amount;
+    }
+
 
 
 

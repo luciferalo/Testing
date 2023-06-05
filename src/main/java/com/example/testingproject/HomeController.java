@@ -41,9 +41,13 @@ public class HomeController {
     private Button ChangeAccbtn;
 
 
-    void setId (int id) {
+    int account_no;
+
+
+    void setId (int id, int account_no) {
 
         this.id = id;
+        this.account_no = account_no;
 
     }
 
@@ -55,7 +59,7 @@ public class HomeController {
             root = loader.load();
 
             DepositController depositController = loader.getController();
-            depositController.setId(id);
+            depositController.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -75,7 +79,7 @@ public class HomeController {
             root = loader.load();
 
             WithdrawController withdrawController = loader.getController();
-            withdrawController.setId(id);
+            withdrawController.setId(id,account_no);
 
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -95,7 +99,7 @@ public class HomeController {
             root = loader.load();
 
             TransferController transferController = loader.getController();
-            transferController.setId(id);
+            transferController.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -115,7 +119,7 @@ public class HomeController {
             root = loader.load();
 
             ApplyforloanController applyforloanController = loader.getController();
-            applyforloanController.setId(id);
+            applyforloanController.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -134,7 +138,7 @@ public class HomeController {
             root = loader.load();
 
             PaybillsController paybillscontroller = loader.getController();
-            paybillscontroller.setId(id);
+            paybillscontroller.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -153,7 +157,7 @@ public class HomeController {
             root = loader.load();
 
             ShowAccountController showaccountcontroller = loader.getController();
-            showaccountcontroller.setId(id);
+            showaccountcontroller.setId(id,account_no);
             showaccountcontroller.displayAccountData(id);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -44,7 +44,7 @@ public class ChoosingAccountController {
             root = loader.load();
 
             HomeController homeController1 = loader.getController();
-            homeController1.setId(id);
+            homeController1.setId(id,1);
 
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -62,7 +62,7 @@ public class ChoosingAccountController {
             root = loader.load();
 
             HomeController homeController2 = loader.getController();
-            homeController2.setId(id);
+            homeController2.setId(id,2);
 
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -80,7 +80,7 @@ public class ChoosingAccountController {
             root = loader.load();
 
             HomeController homeController3 = loader.getController();
-            homeController3.setId(id);
+            homeController3.setId(id,3);
 
             stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

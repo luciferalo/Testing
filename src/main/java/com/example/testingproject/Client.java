@@ -84,10 +84,7 @@ public class Client {
         return total_balance;
     }
 
-    public void setTotal_balance(double amount) {
 
-        this.total_balance += amount;
-    }
 
 
     public double getVirtual_balance() {

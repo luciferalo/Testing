@@ -45,9 +45,12 @@ public class ShowAccountController {
 
 
 
-    void setId (int id) {
+    private int account_no;
+
+    void setId (int id,int account_no) {
 
         this.id = id;
+        this.account_no = account_no;
 
     }
 
@@ -59,6 +62,7 @@ public class ShowAccountController {
             root = loader.load();
 
             HomeController homeController = loader.getController();
+            homeController.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -80,6 +84,7 @@ public class ShowAccountController {
 
             LastPageController lastPageController = loader.getController();
 
+
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -96,7 +101,7 @@ public class ShowAccountController {
         double loan = Online_Bank.getClient(id).getTotal_loan();
         String totalloan = Double.toString(loan);
 
-        usernamelabel.setText(Online_Bank.getClient(id).username);
+        usernamelabel.setText(Online_Bank.getClient(id).name);
         nationalIdLabel.setText(Online_Bank.getClient(id).nationalID);
         genderlabel.setText(Online_Bank.getClient(id).gender);
         mobilelabel.setText(Online_Bank.getClient(id).mobile);

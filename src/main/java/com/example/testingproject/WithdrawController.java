@@ -39,9 +39,12 @@ public class WithdrawController {
     int amount;
 
 
-    void setId (int id) {
+    private int account_no;
+
+    void setId (int id,int account_no) {
 
         this.id = id;
+        this.account_no = account_no;
 
     }
 
@@ -77,6 +80,7 @@ public class WithdrawController {
             root = loader.load();
 
             HomeController homeController = loader.getController();
+            homeController.setId(id,account_no);
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
