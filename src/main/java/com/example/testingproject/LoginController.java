@@ -49,7 +49,7 @@ public class LoginController {
     void setLoginbtn(ActionEvent event) throws IOException {
         String UserName= Usertxt.getText();
         String pass= passwordtxt.getText();
-        if (text.login(UserName,pass)){
+        if (text.login(UserName,pass) && Usertxt.getText().equals("joe")){
     try {
         FXMLLoader loader;
         loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
@@ -67,6 +67,26 @@ public class LoginController {
         e.printStackTrace();
         }
     }
+        else if (text.login(UserName,pass) && Usertxt.getText().equals("lily")) {
+            try {
+                FXMLLoader loader;
+                loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
+                loginroot = loader.load();
+
+                ChoosingAccountController choosingAccountController = loader.getController();
+                choosingAccountController.setId(id);
+                choosingAccountController.acc3visibility();
+
+                loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                loginscene = new Scene(loginroot);
+                loginstage.setScene(loginscene);
+                loginstage.show();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
         else{
             failedlabel.setText("Invalid Username or Password ");
         }

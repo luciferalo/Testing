@@ -68,11 +68,17 @@ public class Client {
 //------------------------------------------------------------------------------------------
 
     public double getTotal_loan() {
-        this.Total_loan=0;
+        //this.Total_loan=0;
         for (int i = 1; i <=this.num_loan; i++) {
             this.Total_loan=this.getLoans(i).get_amount()+this.Total_loan;
         }
         return this.Total_loan;
+    }
+
+    public void setLoanamount(double amount){
+
+        this.Total_loan=this.Total_loan+amount;
+        this.num_loan++;
     }
 
     public double getTotal_balance() {

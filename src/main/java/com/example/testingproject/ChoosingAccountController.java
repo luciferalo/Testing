@@ -109,6 +109,16 @@ public class ChoosingAccountController {
             e.printStackTrace();
         }
     }
+
+    void acc1visibility (){
+        Acount1btn.setVisible(false);
+    }
+    void acc2visibility (){
+        Account2btn.setVisible(false);
+    }
+    void acc3visibility (){
+        Account3btn.setVisible(false);
+    }
 }
 
 

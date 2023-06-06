@@ -34,6 +34,8 @@ public class ApplyforloanController {
 
     @FXML
     private TextField Loantxt;
+    @FXML
+    private Label totallabel;
 
     int loanamount;
 
@@ -90,13 +92,16 @@ public class ApplyforloanController {
     @FXML
     void Applybtnclicked(ActionEvent event){
         loanamount = Integer.parseInt(Loantxt.getText());
-        if(loanamount <= 1000 ) {
-            Loanapprovedlabel.setText("Loan Approved and your new balance is equals " + (loanamount+1000));
+        if(loanamount <= Online_Bank.getClient(id).getVirtual_balance() ) {
+            Loanapprovedlabel.setText("Loan Approved and your new balance in account " + account_no + " equals " + (loanamount + Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
             Loandeniedlabel.setText("");
+            totallabel.setText("your new total balance is equal " + (loanamount + Online_Bank.getClient(id).getTotal_balance()));
+            Online_Bank.getClient(id).setLoanamount(loanamount);
         }
         else {
-            Loandeniedlabel.setText("Loan denied for insufficient balance. Your balance is " + 1000);
+            Loandeniedlabel.setText("Loan denied for insufficient balance. Your balance is " + Online_Bank.getClient(id).getTotal_balance());
             Loanapprovedlabel.setText("");
+            totallabel.setText("");
         }
     }
 }
