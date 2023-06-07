@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.jar.Attributes;
+
 public class TransferController {
 
     @FXML
@@ -42,6 +44,9 @@ public class TransferController {
 
     int amount;
     public String name;
+
+    int receiverId ;
+    public String receiverName;
 
 
     private int id;
@@ -93,15 +98,38 @@ public class TransferController {
         }
     }
     @FXML
-    void Transeferbtnclicked(ActionEvent event){
-        amount= Integer.parseInt(amounttxt.getText());
-        if(amount <= 1000 ) {
-            approvelabel.setText("Transfer completed and your new balance is equal to " + (1000-amount));
-            failedlabel.setText("");
+    void Transeferbtnclicked(ActionEvent event) {
+        amount = Integer.parseInt(amounttxt.getText());
+        receiverId = Integer.parseInt(Accountnotxt.getText());
+        receiverName = nameofusertxt.getText();
+
+        Client c_receiver = Online_Bank.find_Receiver(receiverName);
+
+        if (c_receiver != null && c_receiver.checkAccountExists(receiverId)) {
+            if (Online_Bank.getClient(id).getAccounts(account_no).get_balance() >= amount) {
+
+                Online_Bank.getClient(id).getAccounts(account_no).set_balance(-1 * amount);
+                c_receiver.getAccounts(receiverId).set_balance(amount);
+
+                approvelabel.setText("Transfer completed and your new balance is equal to " + Online_Bank.getClient(id).getAccounts(account_no).get_balance());
+                failedlabel.setText("");
+            } else {
+
+                failedlabel.setText("Transfer failed due to insufficient balance");
+                approvelabel.setText("");
+
+            }
         }
+
+        else if (c_receiver == null){
+            failedlabel.setText("User Not Found");
+        approvelabel.setText("");
+    }
         else {
-            failedlabel.setText("Transfer failed due to insufficient balance");
+            failedlabel.setText("Account Not Found");
             approvelabel.setText("");
         }
+
+
     }
 }

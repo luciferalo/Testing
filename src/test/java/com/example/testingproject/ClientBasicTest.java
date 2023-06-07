@@ -43,7 +43,8 @@ public class ClientBasicTest {
     @Test
     public void testVirtualBalance() {
         client.apply_for_loan(700,"2023-06-30");
-        assertEquals(300, client.getVirtual_balance(), 0.0);
+        client.apply_for_loan(200,"2023-06-30");
+        assertEquals(100, client.getVirtual_balance(), 0.0);
         assertEquals(1000, client.getTotal_balance(), 0.0);
         setUp();
     }

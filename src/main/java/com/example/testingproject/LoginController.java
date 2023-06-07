@@ -49,7 +49,8 @@ public class LoginController {
     void setLoginbtn(ActionEvent event) throws IOException {
         String UserName= Usertxt.getText();
         String pass= passwordtxt.getText();
-        if (text.login(UserName,pass) && Usertxt.getText().equals("joe")){
+        boolean login = text.login(UserName,pass);
+        if (login && Usertxt.getText().equals("joe")){
     try {
         FXMLLoader loader;
         loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
@@ -67,7 +68,7 @@ public class LoginController {
         e.printStackTrace();
         }
     }
-        else if (text.login(UserName,pass) && Usertxt.getText().equals("lily")) {
+        else if (login && Usertxt.getText().equals("lily")) {
             try {
                 FXMLLoader loader;
                 loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));

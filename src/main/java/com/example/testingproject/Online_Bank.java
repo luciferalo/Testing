@@ -32,7 +32,7 @@ Online_Bank(){
                     //                                   c  = el specif client bta33y
                     //userPage(c);
 
-                  LoginController g= new LoginController();
+                  LoginController g = new LoginController();
                   LoginController.start=true;
                      g.setId(c.getId());
 
@@ -106,6 +106,17 @@ Account find_Client_Acc(String usr_name,String Accid){           // for deliver 
          */
 
         return a;
+}
+
+public static Client find_Receiver (String name) {
+
+    for(Client c:clients ){
+        if(c.name.equals(name)){
+           return c;
+        }
+    }
+    return null;
+
 }
 
                     ///            Sample Client

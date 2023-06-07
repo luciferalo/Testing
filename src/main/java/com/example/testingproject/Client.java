@@ -111,6 +111,8 @@ public class Client {
     }
 
 
+
+
     public void setVirtual_balance ( double amount) {
 
             if (this.virtual_balance >= amount) {
@@ -180,6 +182,15 @@ public class Client {
             accounts.add(account);
 
         }
+
+    }
+
+    boolean checkAccountExists (int accountId) {
+
+        if (accountId < 0 || accountId> this.Num_Acc )
+            return false;
+        else
+            return true;
 
     }
 
