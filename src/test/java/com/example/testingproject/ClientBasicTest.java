@@ -52,8 +52,11 @@ public class ClientBasicTest {
     @Test
     public void testLoanAmmount() {
         client.apply_for_loan(500,"2023-06-30");
-        assertEquals(500.0, client.getTotal_loan(), 0.0);
-        assertEquals(500.0, client.getVirtual_balance(), 0.0);
+        client.apply_for_loan(500,"2023-06-30");
+        client.apply_for_loan(500,"2023-06-30");  // not accepted :/
+
+        assertEquals(1000, client.getTotal_loan(), 0.0);
+        assertEquals(0, client.getVirtual_balance(), 0.0);
         setUp();
     }
     @Test

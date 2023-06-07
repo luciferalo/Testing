@@ -91,24 +91,17 @@ public class Client {
         return total_balance;
     }
 
-
-
-
-    public double getVirtual_balance( ) {
-        if(this.loans.isEmpty()){
-
+  /*  public double getVirtual_balance() {
+        if(this.num_loan==0){
             this.virtual_balance=this.getTotal_balance();
         }
-            //else{
+        else{
+            this.virtual_balance=this.getTotal_balance()-this.getTotal_loan();
+            System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
 
-                    //this.virtual_balance = this.virtual_balance - this.getLoans(this.num_loan).get_amount();
-
-
-                //System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
-
-           // }
+        }
         return this.virtual_balance;
-    }
+    }*/
 
 
 
@@ -167,20 +160,12 @@ public class Client {
     }
 
     public void open_account(double initial_balance) {             // add new account
-        // if (Num_Acc!=3){
-        //     Account account=new Account(initial_balance,++this.Num_Acc);
-        // accounts.add(account);
-        // }else{
-        // System.out.println("you have exceded the maximum number of acounts!");
-        //}
-
         if (this.Num_Acc<3) {
-
-
             Num_Acc++;
             Account account = new Account(initial_balance,Num_Acc);
             accounts.add(account);
-
+        } else{
+            System.out.println("you have exceded the maximum number of acounts!");
         }
 
     }
@@ -202,4 +187,21 @@ public class Client {
     }
 
     //--------------------------------------------------------------------------------------------------------
+    // GUI redundant code:
+
+    public double getVirtual_balance( ) {
+        if(this.loans.isEmpty()){
+
+            this.virtual_balance=this.getTotal_balance();
+        }
+            //else{
+
+                    //this.virtual_balance = this.virtual_balance - this.getLoans(this.num_loan).get_amount();
+
+
+                //System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
+
+           // }
+        return this.virtual_balance;
+    }
 }

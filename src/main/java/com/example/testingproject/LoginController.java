@@ -32,25 +32,22 @@ public class LoginController {
     @FXML
     private PasswordField passwordtxt;
 
-  static boolean start=true;
-
+  static boolean start;
 
 
     public  void  setId (int id) {
 
         this.id = id;
-
-
     }
 
-    Online_Bank text = new Online_Bank(LoginController.start);
+    Online_Bank text = new Online_Bank(false);
 
     @FXML
     void setLoginbtn(ActionEvent event) throws IOException {
         String UserName= Usertxt.getText();
         String pass= passwordtxt.getText();
         boolean login = text.login(UserName,pass);
-        if (login && Usertxt.getText().equals("joe")){
+        if (login){
     try {
         FXMLLoader loader;
         loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
@@ -68,26 +65,6 @@ public class LoginController {
         e.printStackTrace();
         }
     }
-        else if (login && Usertxt.getText().equals("lily")) {
-            try {
-                FXMLLoader loader;
-                loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
-                loginroot = loader.load();
-
-                ChoosingAccountController choosingAccountController = loader.getController();
-                choosingAccountController.setId(id);
-                choosingAccountController.acc3visibility();
-
-                loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                loginscene = new Scene(loginroot);
-                loginstage.setScene(loginscene);
-                loginstage.show();
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
-
-        }
         else{
             failedlabel.setText("Invalid Username or Password ");
         }
