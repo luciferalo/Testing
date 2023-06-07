@@ -3,7 +3,7 @@ package com.example.testingproject;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Online_Bank {
-    Scanner input = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
     public static ArrayList<Client> clients = new ArrayList<Client>();
 
 
@@ -52,27 +52,29 @@ Online_Bank(){
         return false;
     }
 
-    public void createAccount(){
-        System.out.print("Input a [unique] username: ");
-        input.nextLine();
-        String username = input.nextLine();
+    public static void createAccount(String name , String ID , String username , String password , String mobile , String gender){
+        boolean flag;
+    //        System.out.print("Input a [unique] username: ");
+//        input.nextLine();
+//        String username = input.nextLine();
         for(Client c:clients ){
             if(c.username.equals(username)){
-                System.out.println("Username already taken");
-                createAccount();
+                //System.out.println("Username already taken");
+                //createAccount();
+                flag=true;
             }
         }
-        System.out.print("enter your name: ");
-        String name = input.nextLine();
-        System.out.print("Input NationalID: ");
-        String id = input.nextLine();
-        System.out.print("Enter your mobile number: ");
-        String no = input.nextLine();
-        System.out.print("Gender: ");
-        String usr_gender = input.nextLine();
-        System.out.print("Input password: ");
-        String pass = input.nextLine();
-        clients.add(new Client(name,id,usr_gender,no,0,pass,username));
+//        System.out.print("enter your name: ");
+//        String name = input.nextLine();
+//        System.out.print("Input NationalID: ");
+//        String id = input.nextLine();
+//        System.out.print("Enter your mobile number: ");
+//        String no = input.nextLine();
+//        System.out.print("Gender: ");
+//        String usr_gender = input.nextLine();
+//        System.out.print("Input password: ");
+//        String pass = input.nextLine();
+        clients.add(new Client(name,ID,gender,mobile,0,password,username));
     }
 
 /*void userPage(Client c){
