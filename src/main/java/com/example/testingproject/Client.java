@@ -110,7 +110,7 @@ public class Client {
 
             if (this.virtual_balance >= amount) {
 
-                this.virtual_balance = this.virtual_balance - amount;
+                this.virtual_balance = this.getVirtual_balance() - amount;
             }
             else {
                 this.loans.remove(this.num_loan-1) ;
@@ -191,7 +191,6 @@ public class Client {
 
     public double getVirtual_balance( ) {
         if(this.loans.isEmpty()){
-
             this.virtual_balance=this.getTotal_balance();
         }
             //else{
@@ -200,6 +199,7 @@ public class Client {
 
 
                 //System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
+        System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
 
            // }
         return this.virtual_balance;

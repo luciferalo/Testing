@@ -90,7 +90,7 @@ public class DepositController {
             amount = Integer.parseInt(Deposittxt.getText());
             if(amount >0 ){
             Online_Bank.getClient(id).getAccounts(account_no).set_balance(amount);
-                Online_Bank.getClient(id).setVirtual_balance(-1*amount);
+               Online_Bank.getClient(id).setVirtual_balance(-1*amount);
             DepositOutLabel.setText("your new balance in account " + account_no + "is equal " +  (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
             DepositOutLabel1.setText("your total balance is equals " + (Online_Bank.getClient(id).getTotal_balance()));
             }
