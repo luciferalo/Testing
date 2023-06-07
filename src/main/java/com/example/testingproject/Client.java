@@ -68,17 +68,18 @@ public class Client {
 //------------------------------------------------------------------------------------------
 
     public double getTotal_loan() {
-        //this.Total_loan=0;
+        this.Total_loan=0;
         for (int i = 1; i <=this.num_loan; i++) {
-            this.Total_loan=this.getLoans(i).get_amount()+this.Total_loan;
+            this.Total_loan=  this.Total_loan + this.getLoans(i).get_amount();
         }
         return this.Total_loan;
     }
 
     public void setLoanamount(double amount){
 
-        this.Total_loan=this.Total_loan+amount;
+        //this.Total_loan=this.Total_loan+amount;
         this.num_loan++;
+        this.loans.add(new Loan(amount,"",this.num_loan));
     }
 
     public double getTotal_balance() {
@@ -93,17 +94,40 @@ public class Client {
 
 
 
-    public double getVirtual_balance() {
-        if(this.num_loan==0){
+    public double getVirtual_balance( ) {
+        if(this.loans.isEmpty()){
+
             this.virtual_balance=this.getTotal_balance();
         }
-        else{
-            this.virtual_balance=this.getTotal_balance()-this.getTotal_loan();
+            //else{
+
+                    //this.virtual_balance = this.virtual_balance - this.getLoans(this.num_loan).get_amount();
+
+
+                //System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
+
+           // }
+        return this.virtual_balance;
+    }
+
+
+    public void setVirtual_balance ( double amount) {
+
+            if (this.virtual_balance >= amount) {
+
+                this.virtual_balance = this.virtual_balance - amount;
+            }
+            else {
+                this.loans.remove(this.num_loan-1) ;
+                this.num_loan--;
+
+
+            }
             System.out.println("loan = "+this.getTotal_loan()+"   total balance = "+this.getTotal_balance()+"  v.balance= "+ this.virtual_balance);
 
         }
-        return this.virtual_balance;
-    }
+
+
 
     public boolean apply_for_loan(double amount,String Deadline){
         if(this.getVirtual_balance()<amount){
