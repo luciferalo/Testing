@@ -91,6 +91,17 @@ public class ChoosingAccountController {
         }
     }
 
+//    @FXML
+//    void addaccbtnclicked(ActionEvent event){
+//        Online_Bank.getClient(id).open_account(0);
+//        if(acc2visibility()==true) {
+//            acc3visibility();
+//        }
+//        else {
+//            acc2visibility();
+//        }
+//    }
+
     @FXML
     void Logoutbtnclicked(ActionEvent event){
         try {
@@ -110,15 +121,23 @@ public class ChoosingAccountController {
         }
     }
 
-    void acc1visibility (){
-        Acount1btn.setVisible(false);
+    void acc1visibility (boolean flag){
+        Acount1btn.setVisible(flag);
     }
-    void acc2visibility (){
-        Account2btn.setVisible(false);
+    void acc2visibility (boolean flag){
+        Account2btn.setVisible(flag);
     }
-    void acc3visibility (){
-        Account3btn.setVisible(false);
+    void acc3visibility (boolean flag){
+        Account3btn.setVisible(flag);
     }
+//    boolean acc2visibility (){
+//        Account2btn.setVisible(true);
+//        return true;
+//    }
+//    boolean acc3visibility (){
+//        Account3btn.setVisible(true);
+//        return true;
+//    }
 }
 
 

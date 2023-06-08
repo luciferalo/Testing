@@ -5,7 +5,7 @@ public class Account {
     private String id;
     private double balance;
 
-boolean is_there(Account a){
+static boolean is_there(Account a){
     return a.id_counter != 0;
 }
     public Account( double initial_balance,int counter) {
@@ -16,13 +16,17 @@ boolean is_there(Account a){
     }
 
     public void deposit(double amount) {
-    if(amount>0){
-        balance += amount;
-        new Deposit(this, amount);}
-    else{
-        System.out.println("Exception <<Invalid Deposit Amount!>>");
-        throw new IllegalArgumentException("Invalid Deposit Amount!");
-    }
+        try {
+            if (amount > 0) {
+                balance += amount;
+                new Deposit(this, amount);
+            } else {
+                System.out.println("Exception <<Invalid Deposit Amount!>>");
+                throw new IllegalArgumentException("Invalid Deposit Amount!");
+
+            }
+        }
+        catch (IllegalArgumentException e ){}
     }
 
     public void withdraw(double amount) {

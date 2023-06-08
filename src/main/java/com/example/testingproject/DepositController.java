@@ -85,24 +85,37 @@ public class DepositController {
     }
 
     @FXML
-    void Depositbtnclicked(ActionEvent event){
-        try{
-            amount = Integer.parseInt(Deposittxt.getText());
-            if(amount >0 ){
-            Online_Bank.getClient(id).getAccounts(account_no).set_balance(amount);
-               Online_Bank.getClient(id).setVirtual_balance(-1*amount);
-            DepositOutLabel.setText("your new balance in account " + account_no + "is equal " +  (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
-            DepositOutLabel1.setText("your total balance is equals " + (Online_Bank.getClient(id).getTotal_balance()));
+    void  Depositbtnclicked(ActionEvent event) {
+        Account account = Online_Bank.getClient(id).getAccounts(account_no);
+        amount = Integer.parseInt(Deposittxt.getText());
+            if(amount > 0){
+                Online_Bank.getClient(id).make_deposit(account , amount);
+                DepositOutLabel.setText("your new balance in account " + account_no + " is equal " +  (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
+                DepositOutLabel1.setText("your total balance is equals " + (Online_Bank.getClient(id).getTotal_balance()));
             }
             else {
-                DepositOutLabel1.setText("invalid amount please enter a positive value");
+                DepositOutLabel.setText("Invalid Deposit amount. Please enter a valid integer.");
+                DepositOutLabel1.setText("");
             }
-        }
-        catch (NumberFormatException e) {
-            // show error message if input is not a valid integer
-            DepositOutLabel.setText("Invalid Deposit amount. Please enter a valid integer.");
-            DepositOutLabel1.setText("");
-        }
     }
+//    void Depositbtnclicked(ActionEvent event){
+//        try{
+//            amount = Integer.parseInt(Deposittxt.getText());
+//            if(amount >0 ){
+//            Online_Bank.getClient(id).getAccounts(account_no).set_balance(amount);
+//               Online_Bank.getClient(id).setVirtual_balance(-1*amount);
+//            DepositOutLabel.setText("your new balance in account " + account_no + "is equal " +  (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
+//            DepositOutLabel1.setText("your total balance is equals " + (Online_Bank.getClient(id).getTotal_balance()));
+//            }
+//            else {
+//                DepositOutLabel1.setText("invalid amount please enter a positive value");
+//            }
+//        }
+//        catch (NumberFormatException e) {
+//            // show error message if input is not a valid integer
+//            DepositOutLabel.setText("Invalid Deposit amount. Please enter a valid integer.");
+//            DepositOutLabel1.setText("");
+//        }
+//    }
 
 }

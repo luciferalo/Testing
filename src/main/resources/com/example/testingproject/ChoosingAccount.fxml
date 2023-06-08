@@ -12,9 +12,18 @@
             <Font size="34.0" />
          </font>
       </Label>
-      <Button fx:id="Acount1btn" layoutX="181.0" layoutY="275.0" mnemonicParsing="false" onAction="#account1clicked" text="Account1" />
-      <Button fx:id="Account2btn" layoutX="423.0" layoutY="275.0" mnemonicParsing="false" onAction="#account2clicked" text="Account2" />
-      <Button fx:id="Account3btn" layoutX="645.0" layoutY="275.0" mnemonicParsing="false" onAction="#account3clicked" text="Account3" />
+      <Button fx:id="Acount1btn" layoutX="181.0" layoutY="275.0" mnemonicParsing="false" onAction="#account1clicked" text="Account1">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="Account2btn" layoutX="423.0" layoutY="275.0" mnemonicParsing="false" onAction="#account2clicked" text="Account2">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="Account3btn" layoutX="645.0" layoutY="275.0" mnemonicParsing="false" onAction="#account3clicked" text="Account3">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
       <Button fx:id="Logoutbtn" layoutX="806.0" layoutY="27.0" mnemonicParsing="false" onAction="#Logoutbtnclicked" text="Logout">
          <font>
             <Font size="20.0" />

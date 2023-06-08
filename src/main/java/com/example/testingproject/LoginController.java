@@ -58,6 +58,16 @@ public class LoginController {
 
         ChoosingAccountController choosingAccountController = loader.getController();
         choosingAccountController.setId(id);
+        if(Online_Bank.getClient(id).Num_Acc==1){
+            choosingAccountController.acc1visibility(true);
+        }
+        else if (Online_Bank.getClient(id).Num_Acc==2) {
+            choosingAccountController.acc2visibility(true);
+        }
+        else {
+            choosingAccountController.acc3visibility(true);
+        }
+
 
         loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         loginscene = new Scene(loginroot);

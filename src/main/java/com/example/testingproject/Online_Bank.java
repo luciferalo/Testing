@@ -16,7 +16,7 @@ Online_Bank(){
             clients.add(new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily"));
             //clients.get(0).open_account(1200);
             //clients.get(0).open_account(Online_Bank.getClient(0).getTotal_balance());
-            clients.get(0).open_account(1000);
+            //clients.get(0).open_account(1000);
              LoginController.start=false;
             //Online_Bank Bank = new Online_Bank();
         }
@@ -95,8 +95,9 @@ Online_Bank(){
    return;
 }*/
 
-Account find_Client_Acc(String usr_name,String Accid){           // for deliver destination (Acc) etc.......
-    Account a=new Account(0,0);
+static Account find_Client_Acc(String usr_name,String Accid){           // for deliver destination (Acc) etc.......
+
+        Account a=new Account(0,0);
 
     int id = (int) Accid.charAt(1) - (int) '0';
         for(Client c:clients ){
