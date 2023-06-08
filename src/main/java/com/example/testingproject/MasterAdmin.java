@@ -23,7 +23,7 @@ public class MasterAdmin {
         for(Client c: Online_Bank.clients){
             if(c.username.equals(UsrName)){
                 Online_Bank.clients.remove(c);
-                System.out.println("Client Successfully removed");
+                System.out.println("Client ["+UsrName+"] Successfully Removed");
                 return;
             }
         }
@@ -37,7 +37,7 @@ public class MasterAdmin {
                 Account a=c.getAccounts(AccNo);
                 if(a.is_there(a)){
                 c.close_account(AccNo);
-                System.out.println("Account Successfully Banned");
+                System.out.println("Account ["+AccNo+"] of user ["+UsrName+"] Successfully Removed");
                 return;
                 }
                 else{
@@ -49,6 +49,4 @@ public class MasterAdmin {
         System.out.println("Username not found!");
         throw new IllegalArgumentException("Username not fo8und!");
     }
-
-
 }

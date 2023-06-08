@@ -13,6 +13,7 @@ public class ClientRegisterTest {
     public void RegisterTest() {
         MyBank.createAccount("test", "test","test", "test", "test", "Male");
         assertTrue(MyBank.Creation_flag);
+        assertEquals(Online_Bank.clients.get(2).getTotal_balance(),1000,0);
         setUp();
     }
     @Test

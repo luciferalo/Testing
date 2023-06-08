@@ -12,15 +12,17 @@ public class TransferMoneyTest {
 
     @BeforeClass
     public static void setUp() {
+        System.out.println("\n=======setup Creation=============");
         client = new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily");
         account = client.getAccounts(1);
         DestinationClient =new Client("youssef", "3432", "Male", "2793864", 1000, "1234", "joe");
         DestinationAccount=DestinationClient.getAccounts(1);
+        System.out.println("===========setup Creation completed========");
     }
 
 
-    @Test
-    public void testTransferMoney() {
+    @Test  // 3 functions used
+    public void testTransferMoney() {           // integration testing using (withdraw.soruce , deposit.dest)
         client.transfer_money(account,DestinationAccount,500);
         assertEquals(500.0, account.get_balance(), 0.0);
         assertEquals(1500.0, DestinationAccount.get_balance(), 0.0);

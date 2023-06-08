@@ -13,13 +13,13 @@ public class MasterAdminTest {
     }
 
     @Test
-    public void BanClient() {
+    public void BanClientTest() {
         admin.BanClient("joe");
         setUp();
     }
 
     @Test
-    public void BanClient_notExist() {
+    public void BanClient_notExist_Test() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             admin.BanClient("Ana De Armas");
         });
@@ -28,7 +28,7 @@ public class MasterAdminTest {
     }
 
     @Test
-    public void BanClientAccount() {
+    public void BanClientAccountTest() {
         admin.BanClientAcc("joe",1);
         setUp();
     }
