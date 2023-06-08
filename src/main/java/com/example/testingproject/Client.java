@@ -120,15 +120,21 @@ public class Client {
 
     public void open_account(double initial_balance) {             // add new account
         if(initial_balance<0){
-            System.out.println(initial_balance);
+            System.out.println("Creating Account.....");
+            System.out.println("Account Creation Failed :(");
             Account account = new Account(initial_balance,Num_Acc); // this will catch the exception ^^
+
         }
         else if (this.Num_Acc<3) {
+
+            //System.out.println("Account Creation....");
             Num_Acc++;
             Account account = new Account(initial_balance,Num_Acc);
             accounts.add(account);
+           // System.out.println("Account Creaion completed ^^\n");
+
         } else{
-            System.out.println("you have exceded the maximum number of acounts!");
+            System.out.println("Invalid>>>You have exceded the maximum number of acounts!");
         }
 
     }

@@ -35,6 +35,7 @@ public class WithdrawTests {
     public void test_invalid_Withdrawal3() {   // - ve number
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             client.make_withdrawal(account, -500);
+
         });
         assertEquals("Invalid Withdraw Amount!", exception.getMessage());
         setUp();

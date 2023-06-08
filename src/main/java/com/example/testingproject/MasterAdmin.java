@@ -47,7 +47,7 @@ public class MasterAdmin {
             }
         }
         System.out.println("Username not found!");
-        throw new IllegalArgumentException("Username not found!");
+        throw new IllegalArgumentException("Username not fo8und!");
     }
 
 

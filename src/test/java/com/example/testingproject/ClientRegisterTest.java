@@ -6,6 +6,7 @@ public class ClientRegisterTest {
     private static Online_Bank MyBank;
     @BeforeClass
     public static void setUp() {
+        System.out.println("\nBank Accounts Initialzer ");
         MyBank=new Online_Bank(true);
     }
     @Test
@@ -13,7 +14,6 @@ public class ClientRegisterTest {
         MyBank.createAccount("test", "test","test", "test", "test", "Male");
         assertTrue(MyBank.Creation_flag);
         setUp();
-
     }
     @Test
     public void Register_Invalid_Test() {

@@ -22,6 +22,7 @@ public class DepositTest {
     public void testNegativeDeposit() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             client.make_deposit(account, -500.0);
+
         });
         assertEquals("Invalid Deposit Amount!", exception.getMessage());
         setUp();

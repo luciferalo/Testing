@@ -10,7 +10,6 @@ static boolean is_there(Account a){
 }
     public Account( double initial_balance,int counter) {
         this.id_counter=counter;
-        System.out.println(initial_balance);
         this.deposit(initial_balance);
         this.id =  "A" + id_counter;
 
@@ -22,7 +21,8 @@ static boolean is_there(Account a){
                 balance += amount;
                 System.out.println("Successful Deposit and your balance is "+balance);
                 new Deposit(this, amount);
-            } else {
+            }
+            else {
                 System.out.println("Invalid Deposit Amount!");
                 throw new IllegalArgumentException("Invalid Deposit Amount!");
             }

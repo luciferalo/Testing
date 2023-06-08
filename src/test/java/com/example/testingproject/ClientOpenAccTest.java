@@ -7,7 +7,9 @@ public class ClientOpenAccTest {
 
     @BeforeClass
     public static void setUp() {
+        System.out.println("=======setup Account Creation=============");
         client = new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily");
+        System.out.println("===========setup Account Creaion completed========");
     }
 
     @Test
@@ -26,16 +28,8 @@ public class ClientOpenAccTest {
         setUp();
     }
 
-
     @Test
-    public void test_OpenAccount_ClientTB() {
-        client.open_account(1000);
-        assertEquals(2000.0, client.getTotal_balance(), 0.0);
-        setUp();
-    }
-
-    @Test
-    public void test_OpenAccount_Invalid_ClientTB() {
+    public void test_OpenAccount_Invalid() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             client.open_account(-1000);
         });
@@ -43,6 +37,12 @@ public class ClientOpenAccTest {
         setUp();
     }
 
+    @Test
+    public void test_OpenAccount_ClientTB() {
+        client.open_account(1000);
+        assertEquals(2000.0, client.getTotal_balance(), 0.0);
+        setUp();
+    }
 
 
     @Test
