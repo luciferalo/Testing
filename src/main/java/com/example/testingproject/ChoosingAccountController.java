@@ -27,8 +27,13 @@ public class ChoosingAccountController {
     @FXML
     private Button Acount1btn;
 
+    @FXML
+
+    private  Button addaccountbutn;
+
     private int id;
     private int account_no;
+    private boolean button2visible;
 
 
 
@@ -91,16 +96,16 @@ public class ChoosingAccountController {
         }
     }
 
-//    @FXML
-//    void addaccbtnclicked(ActionEvent event){
-//        Online_Bank.getClient(id).open_account(0);
-//        if(acc2visibility()==true) {
-//            acc3visibility();
-//        }
-//        else {
-//            acc2visibility();
-//        }
-//    }
+    @FXML
+    void addaccbtnclicked(ActionEvent event){
+       Online_Bank.getClient(id).open_account(0);
+       if( Online_Bank.getClient(id).checkAccountExists(2))
+           acc2visibility(true);
+
+       if(Online_Bank.getClient(id).checkAccountExists(3))
+           acc3visibility(true);
+
+    }
 
     @FXML
     void Logoutbtnclicked(ActionEvent event){
@@ -121,11 +126,12 @@ public class ChoosingAccountController {
         }
     }
 
-    void acc1visibility (boolean flag){
-        Acount1btn.setVisible(flag);
-    }
+    //void acc1visibility (boolean flag){
+        //Acount1btn.setVisible(flag);
+    //}
     void acc2visibility (boolean flag){
         Account2btn.setVisible(flag);
+
     }
     void acc3visibility (boolean flag){
         Account3btn.setVisible(flag);

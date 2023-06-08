@@ -52,21 +52,17 @@ public class LoginController {
         boolean login = text.login(UserName,pass);
         if (login){
     try {
+
+
+
         FXMLLoader loader;
         loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
         loginroot = loader.load();
 
         ChoosingAccountController choosingAccountController = loader.getController();
         choosingAccountController.setId(id);
-        if(Online_Bank.getClient(id).Num_Acc==1){
-            choosingAccountController.acc1visibility(true);
-        }
-        else if (Online_Bank.getClient(id).Num_Acc==2) {
-            choosingAccountController.acc2visibility(true);
-        }
-        else {
-            choosingAccountController.acc3visibility(true);
-        }
+        choosingAccountController.acc2visibility(false);
+        choosingAccountController.acc3visibility(false);
 
 
         loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();

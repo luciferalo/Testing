@@ -29,5 +29,6 @@
             <Font size="20.0" />
          </font>
       </Button>
+      <Button fx:id="addaccountbutn" layoutX="378.0" layoutY="444.0" mnemonicParsing="false" onAction="#addaccbtnclicked" prefHeight="66.0" prefWidth="156.0" text="Add Account" />
    </children>
 </AnchorPane>
