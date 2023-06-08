@@ -38,7 +38,7 @@
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></TextField>
-            <Button fx:id="loginbtn" alignment="CENTER" layoutX="135.0" layoutY="386.0" mnemonicParsing="false" onAction="#setLoginbtn" prefHeight="52.0" prefWidth="128.0" style="-fx-background-color: #ffffff;" text="Login">
+            <Button fx:id="loginbtn" alignment="CENTER" layoutX="46.0" layoutY="380.0" mnemonicParsing="false" onAction="#setLoginbtn" prefHeight="52.0" prefWidth="128.0" style="-fx-background-color: #ffffff;" text="Login">
                <font>
                   <Font size="25.0" />
                </font>
@@ -49,6 +49,14 @@
                <font>
                   <Font name="System Bold" size="25.0" />
                </font></Label>
+            <Button fx:id="regbtn" alignment="CENTER" layoutX="213.0" layoutY="380.0" mnemonicParsing="false" onAction="#regbtnclicked" prefHeight="52.0" prefWidth="128.0" style="-fx-background-color: #ffffff;" text="Register">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </children>

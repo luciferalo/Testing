@@ -3,13 +3,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.RegPageController">
    <children>
-      <Button layoutX="428.0" layoutY="526.0" mnemonicParsing="false" text="Done">
+      <Button fx:id="Donebtn" layoutX="428.0" layoutY="526.0" mnemonicParsing="false" onAction="#Regbtnclicked" text="Done">
          <font>
             <Font size="25.0" />
          </font>
@@ -59,11 +60,6 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="Gendertxt" layoutX="288.0" layoutY="216.0" prefHeight="31.0" prefWidth="516.0">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
       <TextField fx:id="NationalIDtxt" layoutX="288.0" layoutY="141.0" prefHeight="31.0" prefWidth="516.0">
          <font>
             <Font size="15.0" />
@@ -74,5 +70,15 @@
             <Font size="15.0" />
          </font>
       </PasswordField>
+      <RadioButton fx:id="malebtn" layoutX="325.0" layoutY="217.0" mnemonicParsing="false" text="Male">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="femalebtn" layoutX="522.0" layoutY="217.0" mnemonicParsing="false" text="Female">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
    </children>
 </AnchorPane>

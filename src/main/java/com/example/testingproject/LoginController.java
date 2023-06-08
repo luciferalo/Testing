@@ -32,6 +32,9 @@ public class LoginController {
     @FXML
     private PasswordField passwordtxt;
 
+    @FXML
+    private Button regbtn;
+
   static boolean start;
 
 
@@ -67,6 +70,24 @@ public class LoginController {
     }
         else{
             failedlabel.setText("Invalid Username or Password ");
+        }
+    }
+    @FXML
+    void regbtnclicked(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(getClass().getResource("RegPage.fxml"));
+            loginroot = loader.load();
+
+            RegPageController regPageController = loader.getController();
+
+            loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            loginscene = new Scene(loginroot);
+            loginstage.setScene(loginscene);
+            loginstage.show();
+        }
+        catch (Exception e){
+            e.printStackTrace();
         }
     }
 

@@ -12,11 +12,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
 
-public class PaybillsController {
+public class PaybillsController implements Initializable{
 
     @FXML
     private TextField Amunttxt;
@@ -55,8 +55,8 @@ public class PaybillsController {
 
     }
 
-    @FXML
-    public void inisialize(URL url, ResourceBundle resourceBundle){
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
         ComboBoxtxt.setItems(FXCollections.observableArrayList("Electricity","Water","University fees","Gas"));
     }
 
