@@ -4,11 +4,9 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        MasterAdminTest.class,
-        Client_DB_Suite.class,
-        MoneyTransferTestSuite.class,
-
+        ClientOpenAccTest.class,
+        ClientRegisterTest.class,
+        ClientLoanTest.class
 })
-public class BankTestSuite {
-
+public class Client_DB_Suite {
 }

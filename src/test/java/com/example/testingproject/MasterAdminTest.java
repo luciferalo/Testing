@@ -3,13 +3,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 public class MasterAdminTest {
-    static MasterAdmin admin;
-    static Online_Bank b1;
+    private static MasterAdmin admin;
+    private static Online_Bank b1;
     @BeforeClass
     public static void setUp() {
         admin=new MasterAdmin("Omar","3333","Male","+20 1020...","1q2w3e4r","masteradmin");
         System.out.println("\nBank Accounts Initialzer:- ");
-         b1=new Online_Bank(true);
+        b1=new Online_Bank(true);
     }
 
     @Test
@@ -33,3 +33,4 @@ public class MasterAdminTest {
         setUp();
     }
 }
+
