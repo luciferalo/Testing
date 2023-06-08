@@ -10,7 +10,8 @@ static boolean is_there(Account a){
 }
     public Account( double initial_balance,int counter) {
         this.id_counter=counter;
-        this.balance = initial_balance;
+        System.out.println(initial_balance);
+        this.deposit(initial_balance);
         this.id =  "A" + id_counter;
 
     }
@@ -19,33 +20,50 @@ static boolean is_there(Account a){
         try {
             if (amount > 0) {
                 balance += amount;
+                System.out.println("Successful Deposit and your balance is "+balance);
                 new Deposit(this, amount);
             } else {
-                System.out.println("Exception <<Invalid Deposit Amount!>>");
+                System.out.println("Invalid Deposit Amount!");
                 throw new IllegalArgumentException("Invalid Deposit Amount!");
-
             }
         }
-        catch (IllegalArgumentException e ){}
+        catch (IllegalArgumentException e ){
+            throw new IllegalArgumentException("Invalid Deposit Amount!");
+        }
     }
 
     public void withdraw(double amount) {
+    if(amount<0){
+        System.out.println("Exception<<Negative Amount!>>");
+        throw new IllegalArgumentException("Invalid Withdraw Amount!");
+    }
         if (balance < amount) {
+            System.out.println("Insufficient funds!");
+            System.out.println("Insufficient funds.");
             throw new IllegalArgumentException("Insufficient funds.");
         }
         balance -= amount;
+        System.out.println("Successful Withdraw and your balance is "+balance);
         new Withdraw(this, amount);
     }
 
     public void transfer_to(Account destination, double amount) {
         if (balance < amount) {
+            System.out.println("Insufficient funds!");
             throw new IllegalArgumentException("Insufficient funds.");
         }
         if (!is_there(destination)){
             throw new IllegalArgumentException("Destination Account does not exist!");
         }
-        balance -= amount;
+        if(amount<0){
+            System.out.println("Exception<<Negative Amount!>>");
+            throw new IllegalArgumentException("Invalid Withdraw Amount!");
+        }
+        System.out.println("--------------Source Client Notification: ");
+        this.withdraw(amount);
+        System.out.println("--------------Destination Client Notification: ");
         destination.deposit(amount);
+
         new TransferMoney(this, destination, amount);
     }
 
@@ -61,10 +79,6 @@ static boolean is_there(Account a){
 
         this.balance += amount;
     }
-
-
-
-
     public String get_id() {
         return id;
     }
