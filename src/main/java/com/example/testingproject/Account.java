@@ -28,7 +28,8 @@ static boolean is_there(Account a){
             }
         }
         catch (IllegalArgumentException e ){
-            throw new IllegalArgumentException("Invalid Deposit Amount!");
+            //throw new IllegalArgumentException("Invalid Deposit Amount!");
+            e.getMessage();
         }
     }
 

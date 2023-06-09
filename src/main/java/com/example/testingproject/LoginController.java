@@ -51,6 +51,32 @@ public class LoginController {
         String pass= passwordtxt.getText();
         boolean login = text.login(UserName,pass);
         if (login){
+
+            if (UserName.equals("masteradmin")) {
+                try {
+
+
+
+                    FXMLLoader loader;
+                    loader = new FXMLLoader(getClass().getResource("AdminPage.fxml"));
+                    loginroot = loader.load();
+
+                   AdminPageController adminPageController = loader.getController();
+
+
+
+                    loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    loginscene = new Scene(loginroot);
+                    loginstage.setScene(loginscene);
+                    loginstage.show();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
+
+            }
     try {
 
 

@@ -52,9 +52,15 @@ public class RegPageController implements Initializable {
         String mobile = Mobiletxt.getText();
         String gender = genderbox.getValue();
         String name = Nametxt.getText();
-        if (username == null || password == null || nationalid == null || mobile == null || gender == null || name == null) {
+        if ( name == null || nationalid == null || gender == null || mobile == null || username == null || password == null) {
+
            errortxt.setText("please enter all the data required");
         }
+
+        else if (name.isEmpty() || nationalid.isEmpty() || gender.isEmpty() || mobile.isEmpty() || username.isEmpty() || password.isEmpty())
+            errortxt.setText("please enter all the data required");
+
+
         else {
             Online_Bank.createAccount(name, nationalid, username, password, mobile, gender);
 
