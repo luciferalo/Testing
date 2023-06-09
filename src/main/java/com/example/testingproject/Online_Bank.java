@@ -8,6 +8,7 @@ public class Online_Bank {
     static boolean Creation_flag=true;
 
      public static MasterAdmin Admin;
+   static public boolean PaidMinDeposit=true;
 
 Online_Bank(){
     this(false);
@@ -65,8 +66,9 @@ Online_Bank(){
                 throw new IllegalArgumentException("Username already taken");
             }
         }
+        Creation_flag=true;
         System.out.println("user ["+ username + "] added to the system successfully");
-        clients.add(new Client(name,ID,gender,mobile,1000,password,username));
+        clients.add(new Client(name,ID,gender,mobile,0,password,username));
     }
 
 

@@ -123,11 +123,22 @@ public class Client {
     }
 
     public void open_account(double initial_balance) {             // add new account
-        if(initial_balance<0){
+        if(initial_balance<0) {
             System.out.println("Creating Account.....");
             System.out.println("Account Creation Failed :(");
-            Account account = new Account(initial_balance,Num_Acc); // this will catch the exception ^^
+            Account account = new Account(initial_balance, Num_Acc); // this will catch the exception ^^
 
+        }
+        if(initial_balance==0){
+            if(Online_Bank.PaidMinDeposit){
+                Num_Acc++;
+                Account account = new Account(1000,Num_Acc);
+                accounts.add(account);
+            }else{
+                System.out.println("Creating Account.....");
+                System.out.println("Account Creation Failed :(");
+                Account account = new Account(initial_balance, Num_Acc); // this will catch the exception ^^
+            }
         }
         else if (this.Num_Acc<3) {
 
