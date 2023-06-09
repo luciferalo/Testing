@@ -6,7 +6,14 @@ public class Account {
     private double balance;
 
 static boolean is_there(Account a){
-    return a.id_counter != 0;
+    if(a.id_counter != 0){
+        System.out.println("\nDestination Account does exist ^^");
+    return true;
+    }else{
+        System.out.println("\nDestination Account does not exist!");
+        return false;
+    }
+    //return a.id_counter != 0;
 }
     public Account( double initial_balance,int counter) {
         this.id_counter=counter;
@@ -28,8 +35,8 @@ static boolean is_there(Account a){
             }
         }
         catch (IllegalArgumentException e ){
-            //throw new IllegalArgumentException("Invalid Deposit Amount!");
-            e.getMessage();
+            throw new IllegalArgumentException("Invalid Deposit Amount!");
+            //e.getMessage();
         }
     }
 

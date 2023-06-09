@@ -84,6 +84,7 @@ public class Client {
             return false;
         }
         else{
+            System.out.println("Loan approved!");
             Loan l=new Loan(amount,Deadline,++this.num_loan);
             loans.add(l);
             this.virtual_balance=this.virtual_balance-amount;
@@ -116,6 +117,9 @@ public class Client {
     public void pay_loan(int loan_number, Account account) {
         double amount=this.getLoans(loan_number).get_amount();
         account.withdraw(amount);
+        loans.get(loan_number-1);
+        this.num_loan--;
+        System.out.println("Loan Successfully Paid ^^");
     }
 
     public void open_account(double initial_balance) {             // add new account

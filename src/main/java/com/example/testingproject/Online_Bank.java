@@ -66,7 +66,7 @@ Online_Bank(){
             }
         }
         System.out.println("user ["+ username + "] added to the system successfully");
-        clients.add(new Client(name,ID,gender,mobile,0,password,username));
+        clients.add(new Client(name,ID,gender,mobile,1000,password,username));
     }
 
 

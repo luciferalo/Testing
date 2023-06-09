@@ -9,8 +9,10 @@ public class ClientLoanTest {
 
     @BeforeClass
     public static void setUp() {
+        System.out.println("\n=======setup Creation=============");
         client = new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily");
         account = client.getAccounts(1);
+        System.out.println("===========setup Creation completed========");
     }
 
 
@@ -42,8 +44,18 @@ public class ClientLoanTest {
     @Test
     public void PayLoanTest_accepted() {
         client.apply_for_loan(700,"2023-06-30");
+        System.out.println(client.num_loan);
         client.pay_loan(1, account);
-        assertEquals(300, client.getTotal_balance(), 0.0); // client have money to pay loan ^^
+        assertEquals(300, client.getTotal_balance(), 0.0); // client have money to pay loan and Loan removed
+        setUp();
+    }
+
+    @Test
+    public void PayLoan_NUM_Test_accepted() {
+        client.apply_for_loan(700,"2023-06-30");
+        System.out.println(client.num_loan);
+        client.pay_loan(1, account);
+        assertEquals(0, client.num_loan, 0.0); // client have money to pay loan and Loan removed
         setUp();
     }
     @Test

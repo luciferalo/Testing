@@ -47,7 +47,9 @@ public class TransferMoneyTest {
 
     @Test    // Advanced
     public void testTransferToNonExistentAccount() {
-        Account nonExistentAccount = new Account(2, 0);      // initializing trash account
+        System.out.println("Creating Trash Destination Account.........");
+        Account nonExistentAccount = new Account(404, 0);      // initializing trash account
+        System.out.println("===============Trash Destination Account Created!============");
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             client.transfer_money(account, nonExistentAccount, 500.0);
         });

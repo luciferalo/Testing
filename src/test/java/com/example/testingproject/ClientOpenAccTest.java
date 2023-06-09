@@ -7,7 +7,7 @@ public class ClientOpenAccTest {
 
     @BeforeClass
     public static void setUp() {
-        System.out.println("=======setup Account Creation=============");
+        System.out.println("\n=======setup Account Creation=============");
         client = new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily");
         System.out.println("===========setup Account Creaion completed========");
     }

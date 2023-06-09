@@ -8,8 +8,10 @@ public class DepositTest {
 
     @BeforeClass
     public static void setUp() {
+        System.out.println("\n=======setup Account Creation=============");
         client = new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily");
         account = client.getAccounts(1);
+        System.out.println("===========setup Account Creaion completed========");
     }
 
     @Test
