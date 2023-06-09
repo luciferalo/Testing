@@ -43,6 +43,7 @@ public class PaybillsController implements Initializable{
 
 
     int amount;
+    private String combotext;
 
     private int id;
 
@@ -57,7 +58,7 @@ public class PaybillsController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        ComboBoxtxt.setItems(FXCollections.observableArrayList("Electricity","Water","University fees","Gas"));
+        ComboBoxtxt.setItems(FXCollections.observableArrayList("Electricity","Water","University fees","Gas", "loan"));
     }
 
     @FXML
@@ -103,17 +104,20 @@ public class PaybillsController implements Initializable{
     void Paybtnclicked(ActionEvent event){
         try {
             amount = Integer.parseInt(Amunttxt.getText());
+            combotext = ComboBoxtxt.getValue();
             if (amount > 0) {
                 if (amount <= Online_Bank.getClient(id).getAccounts(account_no).get_balance()) {
-                    Online_Bank.getClient(id).getAccounts(account_no).set_balance(-1 * amount);
-                    Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
-                    totalbalancelabel.setText("your total balance is equals " + Online_Bank.getClient(id).getTotal_balance());
-                    Denied.setText("");
-                } else {
-                    Denied.setText("Transaction denied duo to insufficient balance. Your balance is " + Online_Bank.getClient(id).getAccounts(account_no).get_balance());
-                    Approve.setText("");
+                        if(combotext==null){
+                            Denied.setText("please specify the company you want to pay your bills to");
+                        }
+                        else {
+                            Online_Bank.getClient(id).pay_bill(combotext, Online_Bank.getClient(id).getAccounts(account_no), amount);
+                            Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
+                            totalbalancelabel.setText("your total balance is equals " + Online_Bank.getClient(id).getTotal_balance());
+                            Denied.setText("");
+                        }
+                    }
                 }
-            }
             else {
                 Denied.setText("Invalid amount. Please enter a positive integer.");
                 Approve.setText("");}

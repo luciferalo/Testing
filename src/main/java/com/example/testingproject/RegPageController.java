@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.example.testingproject.Online_Bank.clients;
+
 public class RegPageController implements Initializable {
 
     @FXML
@@ -44,6 +46,13 @@ public class RegPageController implements Initializable {
         genderbox.setItems(FXCollections.observableArrayList("Male","Female"));
     }
 
+    public boolean compare (String username){
+        for(Client c: clients){
+            if(c.username.equals(username))
+                return false;
+        }
+        return true;
+    }
     @FXML
     void Regbtnclicked(ActionEvent event) {
         String username = Usernametxt.getText();
@@ -62,22 +71,30 @@ public class RegPageController implements Initializable {
 
 
         else {
-            Online_Bank.createAccount(name, nationalid, username, password, mobile, gender);
+            if(compare(username)) {
 
-            try {
-                FXMLLoader loader;
-                loader = new FXMLLoader(getClass().getResource("Login.fxml"));
-                root = loader.load();
+                try {
+                    Online_Bank.createAccount(name, nationalid, username, password, mobile, gender);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    errortxt.setText("Username already found");
+                }
+                try {
+                    FXMLLoader loader;
+                    loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+                    root = loader.load();
 
-                LoginController loginController = loader.getController();
+                    LoginController loginController = loader.getController();
 
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                e.printStackTrace();
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+            errortxt.setText("Username already taken please enter another another username");
         }
     }
 

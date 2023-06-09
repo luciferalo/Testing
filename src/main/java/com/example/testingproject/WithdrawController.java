@@ -54,9 +54,10 @@ public class WithdrawController {
             amount = Integer.parseInt(withdrawtxt.getText());
             if (amount > 0) {
                 if (amount <= Online_Bank.getClient(id).getAccounts(account_no).get_balance()) {
-                    approvedlabel.setText("Transaction is completed successfully and your new balance is "+ (Online_Bank.getClient(id).getAccounts(account_no).get_balance()-amount));
+                    Online_Bank.getClient(id).make_withdrawal(Online_Bank.getClient(id).getAccounts(account_no) , amount);
+                    approvedlabel.setText("Transaction is completed successfully and your new balance is "+ (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
                     failedlabel.setText("");
-                    Online_Bank.getClient(id).getAccounts(account_no).set_balance(-1*amount);
+                   // Online_Bank.getClient(id).getAccounts(account_no).set_balance(-1*amount);
                 } else {
                     failedlabel.setText("Transaction failed due to insufficient balance. Your balance is " + Online_Bank.getClient(id).getAccounts(account_no).get_balance());
                     approvedlabel.setText("");
