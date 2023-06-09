@@ -7,6 +7,8 @@ public class Online_Bank {
     public static ArrayList<Client> clients = new ArrayList<Client>();
     static boolean Creation_flag=true;
 
+     public static MasterAdmin Admin;
+
 Online_Bank(){
     this(false);
 }
@@ -14,7 +16,7 @@ Online_Bank(){
         if(start){  // initializer
             clients.add(new Client("youssef", "3432", "Male", "2793864", 1000, "1234", "joe"));
             clients.add(new Client("layla", "0912","Female", "01927237", 1000, "1234", "lily"));
-            MasterAdmin Admin=new MasterAdmin("Omar","3333","Male","+20 1020...","1q2w3e4r","masteradmin");
+             Admin=new MasterAdmin("Omar","3333","Male","+20 1020...","1q2w3e4r","masteradmin");
              LoginController.start=false;
         }
 }
@@ -96,5 +98,11 @@ public static Client find_Receiver (String name) {
 
         return clients.get(id);
     }
+
+
+
+
+
+
 
 }

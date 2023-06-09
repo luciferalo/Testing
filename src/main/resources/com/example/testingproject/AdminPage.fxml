@@ -15,6 +15,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="RemoveClientBtn" layoutX="499.0" layoutY="434.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="131.0" text="Remove Client" />
+      <Button fx:id="RemoveClientBtn" layoutX="499.0" layoutY="434.0" mnemonicParsing="false" onAction="#removeClientbtnClicked" prefHeight="47.0" prefWidth="131.0" text="Remove Client" />
+      <Button fx:id="logout" layoutX="795.0" layoutY="37.0" mnemonicParsing="false" onAction="#Logoutbtnclicked" text="logout" />
    </children>
 </AnchorPane>
