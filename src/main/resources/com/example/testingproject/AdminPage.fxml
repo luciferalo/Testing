@@ -6,16 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.AdminPageController">
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testingproject.AdminPageController">
    <children>
-      <Button fx:id="RemoveAccountBtn" layoutX="114.0" layoutY="304.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="Remove Account" />
-      <ComboBox fx:id="clientSelection" layoutX="250.0" layoutY="67.0" prefHeight="17.0" prefWidth="251.0" promptText="Choose Cllient" />
-      <Label layoutX="69.0" layoutY="66.0" prefHeight="11.0" prefWidth="90.0" text="Client">
+      <Button fx:id="RemoveAccountBtn" layoutX="236.0" layoutY="434.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="131.0" text="Remove Account" />
+      <ComboBox fx:id="clientSelection" layoutX="411.0" layoutY="203.0" prefHeight="36.0" prefWidth="251.0" promptText="Choose Cllient" />
+      <Label layoutX="236.0" layoutY="203.0" prefHeight="36.0" prefWidth="81.0" text="Client:">
          <font>
-            <Font size="18.0" />
+            <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="RemoveClientBtn" layoutX="395.0" layoutY="304.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="119.0" text="Remove Client" />
+      <Button fx:id="RemoveClientBtn" layoutX="499.0" layoutY="434.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="131.0" text="Remove Client" />
    </children>
 </AnchorPane>

@@ -50,58 +50,48 @@ public class LoginController {
         String UserName= Usertxt.getText();
         String pass= passwordtxt.getText();
         boolean login = text.login(UserName,pass);
-        if (login){
+        if (UserName.equals("masteradmin")) {
+            try {
+                FXMLLoader loader;
+                loader = new FXMLLoader(getClass().getResource("AdminPage.fxml"));
+                loginroot = loader.load();
 
-            if (UserName.equals("masteradmin")) {
+                AdminPageController adminPageController = loader.getController();
+
+                loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                loginscene = new Scene(loginroot);
+                loginstage.setScene(loginscene);
+                loginstage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+            else {
+            if (login) {
                 try {
 
 
-
                     FXMLLoader loader;
-                    loader = new FXMLLoader(getClass().getResource("AdminPage.fxml"));
+                    loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
                     loginroot = loader.load();
 
-                   AdminPageController adminPageController = loader.getController();
-
+                    ChoosingAccountController choosingAccountController = loader.getController();
+                    choosingAccountController.setId(id);
+                    choosingAccountController.acc2visibility(false);
+                    choosingAccountController.acc3visibility(false);
 
 
                     loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     loginscene = new Scene(loginroot);
                     loginstage.setScene(loginscene);
                     loginstage.show();
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-
-
             }
-    try {
-
-
-
-        FXMLLoader loader;
-        loader = new FXMLLoader(getClass().getResource("ChoosingAccount.fxml"));
-        loginroot = loader.load();
-
-        ChoosingAccountController choosingAccountController = loader.getController();
-        choosingAccountController.setId(id);
-        choosingAccountController.acc2visibility(false);
-        choosingAccountController.acc3visibility(false);
-
-
-        loginstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        loginscene = new Scene(loginroot);
-        loginstage.setScene(loginscene);
-        loginstage.show();
-    }
-    catch (Exception e){
-        e.printStackTrace();
-        }
-    }
-        else{
-            failedlabel.setText("Invalid Username or Password ");
+            else {
+                failedlabel.setText("Invalid Username or Password ");
+            }
         }
     }
     @FXML
