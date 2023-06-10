@@ -12,62 +12,62 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="212.0" text="National ID :">
+      <Label layoutX="93.0" layoutY="164.0" text="National ID :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="275.0" text="Gender :">
+      <Label layoutX="93.0" layoutY="227.0" text="Gender :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="335.0" text="Mobile : ">
+      <Label layoutX="93.0" layoutY="287.0" text="Mobile : ">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="400.0" text="Balance :">
+      <Label layoutX="93.0" layoutY="352.0" text="Balance :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="463.0" text="Loan ( if any ) :">
+      <Label layoutX="93.0" layoutY="472.0" text="Loan ( if any ) :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="loanlabel" layoutX="372.0" layoutY="463.0" text="Label">
+      <Label fx:id="loanlabel" layoutX="372.0" layoutY="472.0" text="Label">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="balancelabel" layoutX="372.0" layoutY="400.0" text="Label">
+      <Label fx:id="balancelabel" layoutX="374.0" layoutY="352.0" text="Label">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="mobilelabel" layoutX="372.0" layoutY="335.0" text="Label">
+      <Label fx:id="mobilelabel" layoutX="374.0" layoutY="287.0" text="Label">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="genderlabel" layoutX="372.0" layoutY="275.0" text="Label">
+      <Label fx:id="genderlabel" layoutX="374.0" layoutY="227.0" text="Label">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="nationalIdLabel" layoutX="372.0" layoutY="212.0" text="Label">
+      <Label fx:id="nationalIdLabel" layoutX="374.0" layoutY="164.0" text="Label">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="usernamelabel" layoutX="372.0" layoutY="150.0" text="Label">
+      <Label fx:id="usernamelabel" layoutX="374.0" layoutY="102.0" text="Label">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="150.0" text="Name : ">
+      <Label layoutX="93.0" layoutY="102.0" text="Name : ">
          <font>
             <Font size="20.0" />
          </font>
@@ -77,5 +77,15 @@
             <Font size="20.0" />
          </font>
       </Button>
+      <Label fx:id="Accbalancelabel" layoutX="374.0" layoutY="414.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="414.0" text="Balance of the account :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

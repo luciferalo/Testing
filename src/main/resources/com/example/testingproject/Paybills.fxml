@@ -56,5 +56,11 @@
             <Font size="25.0" />
          </font>
       </Label>
+      <Label layoutX="21.0" layoutY="257.0" text="Please enter the loan number ( if any ):">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loantxt" layoutX="500.0" layoutY="259.0" prefHeight="26.0" prefWidth="259.0" promptText="0" />
    </children>
 </AnchorPane>

@@ -13,7 +13,8 @@ import javafx.stage.Stage;
 public class ShowAccountController {
 
     private int id;
-
+    @FXML
+    private Label Accbalancelabel;
     @FXML
     private Parent root;
     @FXML
@@ -76,30 +77,13 @@ public class ShowAccountController {
     }
 
     @FXML
-//    void Donebtnclicked(ActionEvent event) {
-//        try {
-//            FXMLLoader loader;
-//            loader = new FXMLLoader(getClass().getResource("LastPage.fxml"));
-//            root = loader.load();
-//
-//            LastPageController lastPageController = loader.getController();
-//
-//
-//            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//        }
-//        catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
-
     void displayAccountData (int id) {
         double balance = Online_Bank.getClient(id).getTotal_balance();
         String totalbalance = Double.toString(balance);
         double loan = Online_Bank.getClient(id).getTotal_loan();
         String totalloan = Double.toString(loan);
+        double acc = Online_Bank.getClient(id).getAccounts(account_no).get_balance();
+        String accbalande = Double.toString(acc);
 
         usernamelabel.setText(Online_Bank.getClient(id).name);
         nationalIdLabel.setText(Online_Bank.getClient(id).nationalID);
@@ -107,5 +91,6 @@ public class ShowAccountController {
         mobilelabel.setText(Online_Bank.getClient(id).mobile);
         balancelabel.setText(totalbalance);
         loanlabel.setText(totalloan);
+        Accbalancelabel.setText(accbalande);
     }
 }
