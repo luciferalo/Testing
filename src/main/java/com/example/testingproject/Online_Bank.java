@@ -74,7 +74,7 @@ Online_Bank(){
 
 static Account find_Client_Acc(String usr_name,String Accid){           // for deliver destination (Acc) etc.......
 
-        Account a=new Account(0,0);
+        Account a= new Account(0,0);
 
     int id = (int) Accid.charAt(1) - (int) '0';
         for(Client c:clients ){

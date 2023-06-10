@@ -3,6 +3,7 @@ package com.example.testingproject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,8 +15,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static com.example.testingproject.Online_Bank.clients;
+import static com.example.testingproject.Online_Bank.find_Client_Acc;
 
-public class AdminRemoveAccountController {
+public class AdminRemoveAccountController implements Initializable {
 
     @FXML
     private ComboBox<String> AccountSelection;
@@ -32,17 +34,43 @@ public class AdminRemoveAccountController {
     @FXML
     private Scene scene;
 
-    //void setU
+
+    String username1;
+
+    void setUsername (String username) {
+
+       username1 = username;
+    }
 
 
-    //@Override
-    //public void initialize(URL url, ResourceBundle resourceBundle){
+    @Override
+    public void initialize (URL url, ResourceBundle resourceBundle) {
 
-   // }
+        for (Client client : clients) {
+
+            for (int i =1 ;i<=3; i++) {
+
+
+
+                    if (client.checkAccountExists(i)) {
+
+                            if(username1!= null && username1.equals(client.username))
+                            AccountSelection.getItems().add(Online_Bank.getClient(client.getId()).getAccounts(i).get_id());
+
+                    }
+
+                    else break;
+
+
+            }
+        }
+
+        }
+
 
 
     @FXML
-    void removeClientbtnClicked (ActionEvent event) {
+    void removebtnClicked (ActionEvent event) {
 
 
 
@@ -50,7 +78,7 @@ public class AdminRemoveAccountController {
 
 
 
-        //Online_Bank.Admin.BanClientAcc(,accountno);
+        Online_Bank.Admin.BanClientAcc(username1,accountno);
 
 
     }

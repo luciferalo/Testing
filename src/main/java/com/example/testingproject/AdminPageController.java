@@ -62,7 +62,8 @@ public class AdminPageController implements Initializable {
             root = loader.load();
 
             AdminRemoveAccountController adminRemoveAccountController = loader.getController();
-
+            adminRemoveAccountController.setUsername(clientSelection.getValue());
+            //System.out.println(clientSelection.getValue());
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

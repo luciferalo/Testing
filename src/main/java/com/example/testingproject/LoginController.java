@@ -50,7 +50,7 @@ public class LoginController {
         String UserName= Usertxt.getText();
         String pass= passwordtxt.getText();
         boolean login = text.login(UserName,pass);
-        if (UserName.equals("masteradmin")) {
+        if (UserName.equals("masteradmin") && (pass.equals(null) || pass.equals(""))) {
             try {
                 FXMLLoader loader;
                 loader = new FXMLLoader(getClass().getResource("AdminPage.fxml"));
