@@ -23,6 +23,7 @@ static boolean is_there(Account a){
     }
 
     public void deposit(double amount) {
+        long millis_startTime = System.currentTimeMillis();
         try {
             if (amount > 0) {
                 balance += amount;
@@ -38,10 +39,13 @@ static boolean is_there(Account a){
             throw new IllegalArgumentException("Invalid Deposit Amount!");
             //e.getMessage();
         }
+        long millis_endTime = System.currentTimeMillis();
+        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
     }
 
     public void withdraw(double amount) {
-    if(amount<0){
+        long millis_startTime = System.currentTimeMillis();
+        if(amount<0){
         System.out.println("Exception<<Negative Amount!>>");
         throw new IllegalArgumentException("Invalid Withdraw Amount!");
     }
@@ -53,9 +57,12 @@ static boolean is_there(Account a){
         balance -= amount;
         System.out.println("Successful Withdraw and your balance is "+balance);
         new Withdraw(this, amount);
+        long millis_endTime = System.currentTimeMillis();
+        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
     }
 
     public void transfer_to(Account destination, double amount) {
+        long millis_startTime = System.currentTimeMillis();
         if (balance < amount) {
             System.out.println("Insufficient funds!");
             throw new IllegalArgumentException("Insufficient funds.");
@@ -73,10 +80,16 @@ static boolean is_there(Account a){
         destination.deposit(amount);
 
         new TransferMoney(this, destination, amount);
+        long millis_endTime = System.currentTimeMillis();
+        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
     }
 
     public void  showbalance() {
+        long millis_startTime = System.currentTimeMillis();
+
         System.out.println("The account has "+ balance);
+        long millis_endTime = System.currentTimeMillis();
+        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
     }
 
     public double get_balance() {

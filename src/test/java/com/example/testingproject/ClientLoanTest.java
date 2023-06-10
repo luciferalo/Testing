@@ -19,11 +19,14 @@ public class ClientLoanTest {
 
     @Test
     public void testVirtualBalance() {
+        long millis_startTime = System.currentTimeMillis();
         client.apply_for_loan(700,"2023-06-30");
         client.apply_for_loan(200,"2023-06-30");
         assertEquals(100, client.getVirtual_balance(), 0.0);
         assertEquals(1000, client.getTotal_balance(), 0.0);
         setUp();
+        long millis_endTime = System.currentTimeMillis();
+        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
     }
     @Test
     public void testLoanAmmount() {
