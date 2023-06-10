@@ -79,12 +79,13 @@ public class Client {
     }
 
     public boolean apply_for_loan(double amount,String Deadline){
-        long millis_startTime = System.currentTimeMillis();
+            long nano_startTime = System.nanoTime();
 
         if(this.getVirtual_balance()<amount){
             System.out.println("your request is not accepted :/");
-            long millis_endTime = System.currentTimeMillis();
-            System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
+            long nano_endTime = System.nanoTime();
+             System.out.println("Time taken in nano seconds: "
+                           + (nano_endTime - nano_startTime));
             return false;
         }
         else{
@@ -92,8 +93,9 @@ public class Client {
             Loan l=new Loan(amount,Deadline,++this.num_loan);
             loans.add(l);
             this.virtual_balance=this.virtual_balance-amount;
-            long millis_endTime = System.currentTimeMillis();
-            System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
+            long nano_endTime = System.nanoTime();
+             System.out.println("Time taken in nano seconds: "
+                           + (nano_endTime - nano_startTime));
             return true;
 
         }
@@ -117,27 +119,29 @@ public class Client {
     }
 
     public void pay_bill(String biller, Account account, double amount) {
-        long millis_startTime = System.currentTimeMillis();
+            long nano_startTime = System.nanoTime();
         account.withdraw(amount);
         System.out.println("Thanks for Choosing Egy"+biller);
         new PayBills(biller, account, amount);
-        long millis_endTime = System.currentTimeMillis();
-        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
+        long nano_endTime = System.nanoTime();
+         System.out.println("Time taken in nano seconds: "
+                           + (nano_endTime - nano_startTime));
     }
 
     public void pay_loan(int loan_number, Account account) {
-        long millis_startTime = System.currentTimeMillis();
+            long nano_startTime = System.nanoTime();
         double amount=this.getLoans(loan_number).get_amount();
         account.withdraw(amount);
         loans.get(loan_number-1);
         this.num_loan--;
         System.out.println("Loan Successfully Paid ^^");
-        long millis_endTime = System.currentTimeMillis();
-        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
+        long nano_endTime = System.nanoTime();
+         System.out.println("Time taken in nano seconds: "
+                           + (nano_endTime - nano_startTime));
     }
 
     public void open_account(double initial_balance) {
-        long millis_startTime = System.currentTimeMillis();// add new account
+            long nano_startTime = System.nanoTime();
         if(initial_balance<0) {
             System.out.println("Creating Account.....");
             System.out.println("Account Creation Failed :(");
@@ -157,17 +161,18 @@ public class Client {
         }
         else if (this.Num_Acc<3) {
 
-            //System.out.println("Account Creation....");
+            System.out.println("Account Creation....");
             Num_Acc++;
             Account account = new Account(initial_balance,Num_Acc);
             accounts.add(account);
-           // System.out.println("Account Creaion completed ^^\n");
+           System.out.println("Account Creaion completed ^^\n");
 
         } else{
             System.out.println("Invalid>>>You have exceded the maximum number of acounts!");
         }
-        long millis_endTime = System.currentTimeMillis();
-        System.out.println("Time taken in milli seconds: " + (millis_endTime - millis_startTime));
+        long nano_endTime = System.nanoTime();
+         System.out.println("Time taken in nano seconds: "
+                           + (nano_endTime - nano_startTime));
     }
 
     boolean checkAccountExists (int accountId) {
