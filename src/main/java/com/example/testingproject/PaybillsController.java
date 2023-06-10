@@ -109,18 +109,18 @@ public class PaybillsController implements Initializable{
         try {
             amount = Integer.parseInt(Amunttxt.getText());
             combotext = ComboBoxtxt.getValue();
-            loannum = Integer.parseInt(loantxt.getText());
             if (amount > 0) {
                 if (amount <= Online_Bank.getClient(id).getAccounts(account_no).get_balance()) {
                         if(combotext==null){
                             Denied.setText("please specify the company you want to pay your bills to");
                         }
-                        else if (combotext.equals("loan") && loantxt.getText()==null) {
+                        else if (combotext.equals("loan") && loantxt.getText().isEmpty()) {
                             Denied.setText("please enter the loan id");
                             Approve.setText("");
                             totalbalancelabel.setText("");
                         }
-                        else if (combotext.equals("loan") && loantxt.getText() !=null) {
+                        else if (combotext.equals("loan") && !(loantxt.getText().isEmpty())) {
+                            loannum = Integer.parseInt(loantxt.getText());
                             Online_Bank.getClient(id).pay_loan(loannum, Online_Bank.getClient(id).getAccounts(account_no));
                             Approve.setText("Approved and your new balance is equals " + (Online_Bank.getClient(id).getAccounts(account_no).get_balance()));
                             totalbalancelabel.setText("your total balance is equals " + Online_Bank.getClient(id).getTotal_balance());
